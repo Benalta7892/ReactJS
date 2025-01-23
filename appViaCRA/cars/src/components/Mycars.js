@@ -3,12 +3,12 @@ import Car from "./Cars";
 
 class Mycars extends Component {
   render() {
-    console.log(this);
+    const { title } = this.props;
 
     return (
       <div>
         {/* <h1>Catalogue de voitures</h1> */}
-        <h1>{this.props.title}</h1>
+        <h1>{title}</h1>
 
         <Car color="red">Ford</Car>
         <Car>Mercedes</Car>
