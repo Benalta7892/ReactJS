@@ -1,49 +1,24 @@
 import { Component } from "react";
-// import Car from "./Cars";
-import Wrapper from "./Wrapper";
-import MyHeader from "./MyHeader";
+import Car from "./Cars";
 
-const Car = ({ children, color }) => {
-  let colorInfo = "";
-  if (color) {
-    colorInfo = color;
-  } else {
-    colorInfo = "Néant";
-  }
-
-  return (
-    children && (
-      <Wrapper>
-        <p>Marque : {children}</p>
-        <p>Couleur : {colorInfo}</p>
-      </Wrapper>
-    )
-  );
-};
-
-export class Mycars extends Component {
-  state = {
-    cars: ["Ford", "Mercedes", "Peugeot"],
+class Mycars extends Component {
+  noCopy = () => {
+    alert("Merci de ne pas copier le texte");
   };
 
   render() {
-    const { title, color } = this.props;
-
     return (
       <div>
-        {/* <h1>Catalogue de voitures</h1> */}
-        <Wrapper>
-          <MyHeader MyStyle={this.props.color}>{this.props.title}</MyHeader>
-        </Wrapper>
+        <h1>{this.props.title}</h1>
 
-        <Car color="red">{this.state.cars[0]}</Car>
-        <Car>{this.state.cars[1]}</Car>
-        <Car color="green">{this.state.cars[2]}</Car>
+        <p onCopy={this.noCopy}>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 
-        <MyHeader MyStyle={this.props.color}>Bonjour</MyHeader>
+        <Car color="red">Ford</Car>
+        <Car>Mercedes</Car>
+        <Car color="green"></Car>
       </div>
     );
   }
 }
 
-// export default Mycars;
+export default Mycars;

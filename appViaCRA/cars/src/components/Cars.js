@@ -1,21 +1,22 @@
-// import Wrapper from "./Wrapper";
+const Car = ({ color, children }) => {
+  const colorInfo = color ? <p>Couleur : {color}</p> : <p>Couleur : Néant</p>;
 
-// const Car = ({ children, color }) => {
-//   let colorInfo = "";
-//   if (color) {
-//     colorInfo = color;
-//   } else {
-//     colorInfo = "Néant";
-//   }
+  if (children) {
+    return (
+      <div style={{ backgroundColor: "pink", width: "400px", padding: "10px", margin: "5px auto" }}>
+        <p>Marque: {children}</p>
+        {colorInfo}
+      </div>
+    );
+  }
 
-//   return (
-//     children && (
-//       <Wrapper>
-//         <p>Marque : {children}</p>
-//         <p>Couleur : {colorInfo}</p>
-//       </Wrapper>
-//     )
-//   );
-// };
+  return (
+    <div style={{ backgroundColor: "pink", width: "400px", padding: "10px", margin: "5px auto" }}>
+      <p>Pas de data</p>
+    </div>
+  );
 
-// export default Car;
+  // return null // ce return est Facultatif
+};
+
+export default Car;
