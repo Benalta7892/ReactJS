@@ -1,9 +1,27 @@
 import { Component } from "react";
-import Car from "./Cars";
+// import Car from "./Cars";
 import Wrapper from "./Wrapper";
 import MyHeader from "./MyHeader";
 
-class Mycars extends Component {
+const Car = ({ children, color }) => {
+  let colorInfo = "";
+  if (color) {
+    colorInfo = color;
+  } else {
+    colorInfo = "Néant";
+  }
+
+  return (
+    children && (
+      <Wrapper>
+        <p>Marque : {children}</p>
+        <p>Couleur : {colorInfo}</p>
+      </Wrapper>
+    )
+  );
+};
+
+export class Mycars extends Component {
   state = {
     cars: ["Ford", "Mercedes", "Peugeot"],
   };
@@ -28,4 +46,4 @@ class Mycars extends Component {
   }
 }
 
-export default Mycars;
+// export default Mycars;

@@ -1,21 +1,21 @@
-import Wrapper from "./Wrapper";
+// import Wrapper from "./Wrapper";
 
-const Car = ({ children, color }) => {
-  let colorInfo = "";
-  if (color) {
-    colorInfo = color;
-  } else {
-    colorInfo = "Néant";
-  }
+// const Car = ({ children, color }) => {
+//   let colorInfo = "";
+//   if (color) {
+//     colorInfo = color;
+//   } else {
+//     colorInfo = "Néant";
+//   }
 
-  return (
-    children && (
-      <Wrapper>
-        <p>Marque : {children}</p>
-        <p>Couleur : {colorInfo}</p>
-      </Wrapper>
-    )
-  );
-};
+//   return (
+//     children && (
+//       <Wrapper>
+//         <p>Marque : {children}</p>
+//         <p>Couleur : {colorInfo}</p>
+//       </Wrapper>
+//     )
+//   );
+// };
 
-export default Car;
+// export default Car;
