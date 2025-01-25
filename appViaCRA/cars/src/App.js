@@ -3,6 +3,9 @@ import "./App.css";
 import Mycars from "./components/Mycars";
 
 class App extends Component {
+  state = {
+    titre: "Mon Catalogue Voitures",
+  };
   // changeTitle = (e) => {
   //   console.log(e.target);
 
@@ -32,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Mycars />
+        <Mycars title={this.state.titre} />
 
         {/* <button onClick={this.changeTitle}>Changer le nom en dur</button>
         <button onClick={() => this.changeViaParam("Titre via un parametre")}>Changer le nom via parametre</button>

@@ -4,26 +4,11 @@ import Car from "./Cars";
 class Mycars extends Component {
   state = {
     voitures: [
-      { name: "Ford", year: 2000, color: "Red" },
-      { name: "Mercedes", year: 2010, color: "Black" },
+      { name: "Ford", year: 2025, color: "Red" },
+      { name: "Mercedes", year: 2024, color: "Black" },
       { name: "Peugeot", year: 2018, color: "Green" },
     ],
-    titre: "Mon Catalogue Voitures",
   };
-
-  // noCopy = () => {
-  //   alert("Merci de ne pas copier le texte");
-  // };
-
-  // addStyle = (e) => {
-  //   console.log(e.target);
-
-  //   if (e.target.classList.contains("styled")) {
-  //     e.target.classList.remove("styled");
-  //   } else {
-  //     e.target.classList.add("styled");
-  //   }
-  // };
 
   addTenYears = () => {
     const updatedState = this.state.voitures.map((param) => {
@@ -35,42 +20,35 @@ class Mycars extends Component {
     });
   };
 
-  render() {
-    const [ford, mercedes, peugeot] = this.state.voitures;
+  getAge = (year) => {
+    const now = new Date().getFullYear();
+    const age = now - year;
 
-    // const year = new Date().getFullYear();
+    // ans, an,
+    let frenchYearStr;
+    if (age === 1) {
+      frenchYearStr = "an";
+    } else if (age === 0) {
+      frenchYearStr = "";
+    } else {
+      frenchYearStr = "ans";
+    }
+    return `${age} ${frenchYearStr}`;
+  };
+
+  render() {
     return (
       <div>
-        <h1
-        // onMouseOver={this.addStyle}
-        >
-          {this.state.titre}
-        </h1>
+        <h1>{this.props.title}</h1>
 
         <button onClick={this.addTenYears}>+ 10 ans</button>
-
-        <Car name={ford.name} year={ford.year} color={ford.color} />
-        <Car name={mercedes.name} year={mercedes.year} color={mercedes.color} />
-        <Car name={peugeot.name} year={peugeot.year} color={peugeot.color} />
-
-        {/* <p onCopy={this.noCopy}>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p> */}
-
-        {/* <Car year={year - this.state.voitures[0].year + " ans"} color={this.state.voitures[0].color}>
-          {this.state.voitures[0].name}
-        </Car>
-        <Car year={year - this.state.voitures[1].year + " ans"} color={this.state.voitures[1].color}>
-          {this.state.voitures[1].name}
-        </Car>
-        <Car year={year - this.state.voitures[2].year + " ans"} color={this.state.voitures[2].color}>
-          {this.state.voitures[2].name}
-        </Car> */}
 
         {this.state.voitures.map(({ name, year, color }, index) => {
           console.log(index);
 
           return (
             <div key={index}>
-              <Car year={year} color={color}>
+              <Car year={this.getAge(year)} color={color}>
                 {name}
               </Car>
             </div>
