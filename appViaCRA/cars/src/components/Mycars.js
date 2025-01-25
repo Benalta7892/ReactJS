@@ -65,15 +65,17 @@ class Mycars extends Component {
           {this.state.voitures[2].name}
         </Car> */}
 
-        {/* {this.state.voitures.map((voiture, index) => {
+        {this.state.voitures.map(({ name, year, color }, index) => {
           console.log(index);
 
           return (
             <div key={index}>
-              <Car name={voiture.name} year={year - voiture.year + " ans"} color={voiture.color} />
+              <Car year={year} color={color}>
+                {name}
+              </Car>
             </div>
           );
-        })} */}
+        })}
       </div>
     );
   }
