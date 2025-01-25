@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "./App.css";
 import Mycars from "./components/Mycars";
+import Welcome from "./components/Welcome";
 
 class App extends Component {
   state = {
@@ -35,6 +36,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Welcome />
         <Mycars title={this.state.titre} />
 
         {/* <button onClick={this.changeTitle}>Changer le nom en dur</button>
