@@ -1,5 +1,5 @@
 const array = ["Mark", "Léa", "Justine"];
 
-const [userOne, userTwo, userThree] = array;
+const [userOne, ...rest] = array;
 
-console.log(userOne, userTwo, userThree);
+console.log(rest);
