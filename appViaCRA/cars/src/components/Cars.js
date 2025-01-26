@@ -5,7 +5,7 @@ const Car = ({ year, color, children }) => {
     return (
       <div style={{ backgroundColor: "pink", width: "400px", padding: "10px", margin: "5px auto" }}>
         <p>Marque : {children}</p>
-        <p>Année : {year}</p>
+        <p>Âge : {year}</p>
         {colorInfo}
       </div>
     );

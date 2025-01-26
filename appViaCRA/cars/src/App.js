@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Welcome />
+        {/* <Welcome /> */}
         <Mycars title={this.state.titre} />
 
         {/* <button onClick={this.changeTitle}>Changer le nom en dur</button>
