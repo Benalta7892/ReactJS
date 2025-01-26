@@ -1,5 +1,9 @@
-const array = ["Mark", "Léa", "Justine"];
+const members = {
+  userOne: "Mark",
+  userTwo: "Léa",
+  userThree: "Justine",
+};
 
-const [userOne, ...rest] = array;
+const { userOne, userTwo, userThree } = members;
 
-console.log(rest);
+console.log(userOne, userTwo, userThree);
