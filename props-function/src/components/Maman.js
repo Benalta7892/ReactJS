@@ -5,31 +5,24 @@ class Maman extends Component {
   state = {
     messageMaman: null,
     messageToto: null,
+    disabled: true,
   };
 
-  ordreMaman = () => {
-    this.setState({
-      messageMaman: "Va ranger ta chambre",
-    });
-  };
-
-  reponseToto = () => {
-    this.setState({
-      messageToto: "D'accord",
-    });
-    console.log("Function activated");
-  };
+  // Compléter le code de la méthode ordreMaman.
+  ordreMaman = (message) => this.setState({ messageMaman: message, disabled: false });
+  reponseToto = (msg) => this.setState({ messageToto: msg });
 
   render() {
     return (
       <div>
         <h1>Maman</h1>
-        <button onClick={this.ordreMaman}>Ordre de la mère</button>
+        <button onClick={() => this.ordreMaman("Va ranger ta chambre")}>Order de la mère</button>
+
         <p>{this.state.messageMaman}</p>
 
         <hr />
 
-        <Toto name="Toto" leState={this.state} reponseToto={this.reponseToto} />
+        <Toto name="Toto" reponseTotoProps={this.reponseToto} leState={this.state} />
       </div>
     );
   }

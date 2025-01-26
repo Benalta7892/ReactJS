@@ -1,14 +1,12 @@
-const Toto = ({ name, leState, reponseToto }) => {
-  // console.log(reponseToto);
-
-  const btnReponseToto =
-    leState.messageMaman !== null ? <button onClick={reponseToto}>Réponse</button> : <button disabled>Réponse</button>;
-
+const Toto = (props) => {
   return (
     <div>
-      <h2>Je suis {name}</h2>
-      {btnReponseToto}
-      <p>{leState.messageToto}</p>
+      <h2>{props.name}</h2>
+      <button disabled={props.leState.disabled} onClick={() => props.reponseTotoProps("NON")}>
+        Réponse
+      </button>
+
+      <p>{props.leState.messageToto}</p>
     </div>
   );
 };
