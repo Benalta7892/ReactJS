@@ -4,6 +4,6 @@ const members = {
   userThree: "Justine",
 };
 
-const { userOne, userTwo, ...rest } = members;
+const { userOne: hulk, userTwo: spiderMan, userThree: superMan } = members;
 
-console.log(rest);
+console.log(hulk, spiderMan, superMan);
