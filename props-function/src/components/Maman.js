@@ -13,6 +13,13 @@ class Maman extends Component {
     });
   };
 
+  reponseToto = () => {
+    this.setState({
+      messageToto: "D'accord",
+    });
+    console.log("Function activated");
+  };
+
   render() {
     return (
       <div>
@@ -22,7 +29,7 @@ class Maman extends Component {
 
         <hr />
 
-        <Toto name="Toto" />
+        <Toto name="Toto" leState={this.state} reponseToto={this.reponseToto} />
       </div>
     );
   }
