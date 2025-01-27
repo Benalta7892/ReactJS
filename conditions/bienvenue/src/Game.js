@@ -8,17 +8,9 @@ class Result extends Component {
 
   render() {
     if (this.state.winner) {
-      return (
-        <div>
-          <h1>Bravo {this.state.name}</h1>
-        </div>
-      );
+      return <h1>Bravo {this.state.name}</h1>;
     } else {
-      return (
-        <div>
-          <h1>Raté !</h1>
-        </div>
-      );
+      return <h1>Raté !</h1>;
     }
   }
 }
