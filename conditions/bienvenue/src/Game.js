@@ -6,8 +6,31 @@ class Result extends Component {
     winner: true,
   };
 
+  handleState = () => {
+    if (this.state.winner) {
+      this.setState({
+        winner: false,
+      });
+    } else {
+      this.setState({
+        winner: true,
+      });
+    }
+
+    console.log(this.state.winner);
+  };
+
   render() {
-    return this.state.winner && <h1>Bravo {this.state.name}</h1>;
+    return (
+      <div>
+        {this.state.winner && <h1 className="alert alert-success">Bravo {this.state.name}</h1>}
+        {!this.state.winner && <h1 className="alert alert-danger">Raté! {this.state.name}</h1>}
+
+        <button onClick={this.handleState} className="btn btn-primary">
+          Change State
+        </button>
+      </div>
+    );
   }
 }
 
