@@ -1,17 +1,13 @@
 import { Component } from "react";
 import "./myCss.css";
-import MyHead from "./myHeaderOne";
-import styles from "./myCss.module.css";
 
 class Form extends Component {
   render() {
     return (
       <div>
-        <h1 className={styles.green}>Commentaire 1</h1>
-        <MyHead />
+        <h1>Commentaire 1</h1>
 
-        <p className="red">Je suis rouge ou bleu</p>
-        <button>Valider</button>
+        <button className="btn btn-danger">Valider</button>
       </div>
     );
   }
