@@ -27,12 +27,17 @@ class Form extends Component {
     });
   };
 
+  handleSubmitForm = (e) => {
+    e.preventDefault();
+    console.log(`Username: ${this.state.username}, Couleur: ${this.state.color}, Commentaire: ${this.state.comment}`);
+  };
+
   render() {
     return (
       <div>
-        <Car color="red" height="400" />
+        <Car color={this.state.color} height="400" />
         <h1>Commentaire</h1>
-        <form>
+        <form onSubmit={this.handleSubmitForm}>
           <div>
             <label>Pseudo</label>
             <input type="text" value={this.state.username} onChange={this.handlePseudo} />
@@ -55,6 +60,8 @@ class Form extends Component {
             <label>Commentaire</label>
             <textarea value={this.state.comment} onChange={this.handleComment}></textarea>
           </div>
+
+          <button>Valider</button>
         </form>
       </div>
     );
