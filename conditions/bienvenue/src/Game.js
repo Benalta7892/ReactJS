@@ -22,7 +22,7 @@ class Result extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container p-4">
         {this.state.winner && <h1 className="alert alert-success">Bravo {this.state.name}</h1>}
         {!this.state.winner && <h1 className="alert alert-danger">Raté! {this.state.name}</h1>}
 
