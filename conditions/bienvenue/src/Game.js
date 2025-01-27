@@ -6,27 +6,17 @@ class Result extends Component {
     winner: true,
   };
 
-  handleState = () => {
-    if (this.state.winner) {
-      this.setState({
-        winner: false,
-      });
-    } else {
-      this.setState({
-        winner: true,
-      });
-    }
-
-    console.log(this.state.winner);
-  };
+  changeState = () => this.setState({ winner: !this.state.winner });
 
   render() {
+    const classColor = this.state.winner ? "alert-success" : "alert-danger";
     return (
       <div className="container p-4">
-        {this.state.winner && <h1 className="alert alert-success">Bravo {this.state.name}</h1>}
-        {!this.state.winner && <h1 className="alert alert-danger">Raté! {this.state.name}</h1>}
+        <div className={`alert ${classColor}`} role="alert">
+          {this.state.winner ? `Bravo ${this.state.name}` : `Raté !`}
+        </div>
 
-        <button onClick={this.handleState} className="btn btn-primary">
+        <button onClick={this.changeState} className="btn btn-primary">
           Change State
         </button>
       </div>
