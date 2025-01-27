@@ -7,11 +7,19 @@ class Result extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <h1>Hello</h1>
-      </div>
-    );
+    if (this.state.winner) {
+      return (
+        <div>
+          <h1>Bravo {this.state.name}</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1>Raté !</h1>
+        </div>
+      );
+    }
   }
 }
 
