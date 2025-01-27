@@ -1,15 +1,14 @@
 import { Component } from "react";
-
-const titreRouge = {
-  fontSize: "50px",
-  color: "red",
-};
+import "./myCss.css";
 
 class Form extends Component {
   render() {
+    const myClass = this.props.head ? "blue" : "red";
+
     return (
       <div>
-        <h1 style={titreRouge}>Commentaire</h1>
+        <h1 className="blue">Commentaire</h1>
+        <p className={`${myClass} bigFont`}>Je suis rouge ou bleu</p>
         <button>Valider</button>
       </div>
     );
