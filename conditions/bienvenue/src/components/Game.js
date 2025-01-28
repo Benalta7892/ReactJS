@@ -1,5 +1,6 @@
 import { Component } from "react";
-import Btn from "./CustomBtn";
+import { Button } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 
 class Result extends Component {
   state = {
@@ -10,36 +11,18 @@ class Result extends Component {
   changeState = () => this.setState({ winner: !this.state.winner });
 
   render() {
-    const classColor = this.state.winner ? "alert-success" : "alert-danger";
-
-    const succes = {
-      backgroundColor: "green",
-      color: "black",
-    };
-
-    const danger = {
-      backgroundColor: "red",
-      borderRadius: "50px",
-    };
+    const classColor = this.state.winner ? "success" : "danger";
 
     return (
-      <div className="container p-4">
-        <div className={`alert ${classColor}`} role="alert">
+      <>
+        <Alert variant={classColor} className="text-center">
           {this.state.winner ? `Bravo ${this.state.name}` : `Raté !`}
-        </div>
+        </Alert>
 
-        {/* <button onClick={this.changeState} className="btn btn-primary">
+        <Button onClick={this.changeState} variant="success" style={{ display: "block", margin: "5px auto" }}>
           Change State
-        </button> */}
-
-        <Btn btnStyle={succes} changeState={this.changeState}>
-          Change State
-        </Btn>
-
-        <Btn btnStyle={danger} changeState={this.changeState}>
-          Change State
-        </Btn>
-      </div>
+        </Button>
+      </>
     );
   }
 }
