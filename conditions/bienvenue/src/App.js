@@ -1,6 +1,6 @@
 import "./App.css";
-import Result from "./Game";
-import Button from "./CustomBtn";
+import Result from "./components/Game";
+import Button from "./components/CustomBtn";
 
 function App() {
   const sayHello = () => alert("Hello World");
