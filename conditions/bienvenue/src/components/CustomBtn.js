@@ -1,4 +1,4 @@
-const Button = ({ sayHello, changeState, btnStyle, children }) => {
+const Button = ({ changeState, btnStyle, children }) => {
   const customBtn = {
     backgroundColor: "grey",
     border: "none",
@@ -13,7 +13,7 @@ const Button = ({ sayHello, changeState, btnStyle, children }) => {
   };
 
   return (
-    <button onClick={changeState ? changeState : sayHello} style={{ ...customBtn, ...btnStyle }}>
+    <button onClick={changeState} style={{ ...customBtn, ...btnStyle }}>
       {children}
     </button>
   );

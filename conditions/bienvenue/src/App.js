@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Result />
-      <Button sayHello={sayHello} btnStyle={{ backgroundColor: "yellow", color: "blue" }}>
+      <Button changeState={sayHello} btnStyle={{ backgroundColor: "yellow", color: "blue" }}>
         Say Hello
       </Button>
     </div>
