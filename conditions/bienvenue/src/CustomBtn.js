@@ -1,4 +1,4 @@
-const Button = ({ btnStyle, children }) => {
+const Button = ({ sayHello, changeState, btnStyle, children }) => {
   const customBtn = {
     backgroundColor: "grey",
     border: "none",
@@ -12,7 +12,11 @@ const Button = ({ btnStyle, children }) => {
     margin: "5px auto",
   };
 
-  return <button style={{ ...customBtn, ...btnStyle }}>{children}</button>;
+  return (
+    <button onClick={changeState ? changeState : sayHello} style={{ ...customBtn, ...btnStyle }}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

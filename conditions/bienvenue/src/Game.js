@@ -28,13 +28,13 @@ class Result extends Component {
           {this.state.winner ? `Bravo ${this.state.name}` : `Raté !`}
         </div>
 
-        <button onClick={this.changeState} className="btn btn-primary">
+        {/* <button onClick={this.changeState} className="btn btn-primary">
           Change State
-        </button>
+        </button> */}
 
-        <Button btnStyle={succes}>Cliquez ici</Button>
-        <Button btnStyle={danger}>Cliquez ici</Button>
-        <Button btnStyle={{ backgroundColor: "blue" }}>Cliquez ici</Button>
+        <Button btnStyle={succes} changeState={this.changeState}>
+          Change State
+        </Button>
       </div>
     );
   }
