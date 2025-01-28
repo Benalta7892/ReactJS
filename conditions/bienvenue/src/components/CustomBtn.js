@@ -1,4 +1,4 @@
-const Button = ({ changeState, btnStyle, children }) => {
+const Btn = ({ changeState, btnStyle, children }) => {
   const customBtn = {
     backgroundColor: "grey",
     border: "none",
@@ -19,4 +19,4 @@ const Button = ({ changeState, btnStyle, children }) => {
   );
 };
 
-export default Button;
+export default Btn;

@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from "./CustomBtn";
+import Btn from "./CustomBtn";
 
 class Result extends Component {
   state = {
@@ -32,9 +32,13 @@ class Result extends Component {
           Change State
         </button> */}
 
-        <Button btnStyle={succes} changeState={this.changeState}>
+        <Btn btnStyle={succes} changeState={this.changeState}>
           Change State
-        </Button>
+        </Btn>
+
+        <Btn btnStyle={danger} changeState={this.changeState}>
+          Change State
+        </Btn>
       </div>
     );
   }
