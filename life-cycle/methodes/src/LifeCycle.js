@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ChildComponent from "./ChildComponent";
+// import ChildComponent from "./ChildComponent";
 
 class LifeCycle extends Component {
   constructor(props) {
@@ -14,6 +14,17 @@ class LifeCycle extends Component {
 
   componentDidMount() {
     console.log(`Etape ${this.state.step} : Je suis dans le componentDidMount()`);
+    this.setState({
+      name: this.props.name,
+      step: this.state.step + 1,
+    });
+    console.log(`Etape ${this.state.step} : setState() à changé le state dans le componentDidMount()`);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(`Etape ${this.state.step} : Je suis dans le componentDidUpdate()`);
+    console.log(prevState);
+    console.log(this.state);
   }
 
   render() {
@@ -25,7 +36,7 @@ class LifeCycle extends Component {
         <p>Chargement : {this.state.step}</p>
         <p>Nom : {this.state.name}</p>
 
-        <ChildComponent />
+        {/* <ChildComponent /> */}
       </div>
     );
   }
