@@ -11,7 +11,7 @@ class ParentComponent extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("Je suis dans shouldComponentUpdate");
+    console.log("Je suis dans shouldComponentUpdate décide TRUE par defaut");
 
     console.log(this.state.name);
     console.log(nextState);
