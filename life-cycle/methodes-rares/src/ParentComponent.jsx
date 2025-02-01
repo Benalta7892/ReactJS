@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SimpleComp from "./SimpleComponent";
+import PureComp from "./PureComponent";
 
 class ParentComponent extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class ParentComponent extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("Je suis dans shouldComponentUpdate décide TRUE par defaut");
+    console.log("Je suis dans shouldComponentUpdate décide FALSE");
 
     console.log(this.state.name);
     console.log(nextState);
@@ -34,6 +35,7 @@ class ParentComponent extends Component {
     return (
       <div>
         <SimpleComp />
+        <PureComp />
 
         <button onClick={this.changeToBatMan}>Changer en BatMan</button>
       </div>
