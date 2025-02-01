@@ -35,7 +35,8 @@ class ParentComponent extends Component {
     return (
       <div>
         <p>
-          <span className="red">Parent Component :</span>
+          <span className="red">Parent Component : </span>
+          {this.state.name}
         </p>
 
         <SimpleComp name={this.state.name} />

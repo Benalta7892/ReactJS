@@ -7,7 +7,8 @@ class SimpleComp extends Component {
     return (
       <div>
         <p>
-          <span className="yellow">Simple Component :</span>
+          <span className="yellow">Simple Component : </span>
+          {this.props.name}
         </p>
       </div>
     );

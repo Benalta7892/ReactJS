@@ -7,7 +7,8 @@ class PureComp extends PureComponent {
     return (
       <div>
         <p>
-          <span className="green">Pure Component :</span>
+          <span className="green">Pure Component : </span>
+          {this.props.name}
         </p>
       </div>
     );
