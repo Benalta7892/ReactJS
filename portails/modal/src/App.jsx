@@ -1,13 +1,34 @@
+import { Component } from "react";
 import "./App.css";
-import MyComponent from "./MyComponent";
+import Modal from "./Modal";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Les portails</h1>
-      <MyComponent />
-    </div>
-  );
+class App extends Component {
+  state = {
+    showModal: false,
+  };
+
+  handleShow = () => {
+    this.setState({
+      showModal: true,
+    });
+  };
+
+  handleHide = () => {
+    this.setState({
+      showModal: false,
+    });
+  };
+
+  render() {
+    const modal = this.state.showModal && <Modal close={this.handleHide} />;
+
+    return (
+      <div className="App">
+        <button onClick={this.handleShow}>Afficher le Modal</button>
+        {modal}
+      </div>
+    );
+  }
 }
 
 export default App;
