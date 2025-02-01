@@ -35,7 +35,7 @@ class ParentComponent extends Component {
     console.log("%c RENDER() DU COMPOSANT PARENT", "color: red;");
 
     return (
-      <div>
+      <>
         <p>
           <span className="red">Parent Component : </span>
           {this.state.name}
@@ -46,7 +46,7 @@ class ParentComponent extends Component {
         <FunctionComp name={this.state.name} />
 
         <Button changeToBatMan={this.changeToBatMan} />
-      </div>
+      </>
     );
   }
 }

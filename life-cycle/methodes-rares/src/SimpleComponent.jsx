@@ -5,12 +5,12 @@ class SimpleComp extends Component {
     console.log("%c render() du composant enfant simple", "color: yellow;");
 
     return (
-      <div>
+      <>
         <p>
           <span className="yellow">Simple Component : </span>
           {this.props.name}
         </p>
-      </div>
+      </>
     );
   }
 }
