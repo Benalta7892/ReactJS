@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SimpleComp from "./SimpleComponent";
 import PureComp from "./PureComponent";
 import FunctionComp from "./FunctionComp";
+import Button from "./Button";
 
 class ParentComponent extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class ParentComponent extends Component {
         <PureComp name={this.state.name} />
         <FunctionComp name={this.state.name} />
 
-        <button onClick={this.changeToBatMan}>Changer en BatMan</button>
+        <Button changeToBatMan={this.changeToBatMan} />
       </div>
     );
   }

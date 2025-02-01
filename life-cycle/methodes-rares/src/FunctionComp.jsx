@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function FunctionComp({ name }) {
   console.log("%c render() du FunctionComponent enfant simple", "color: purple;");
 
@@ -11,4 +13,4 @@ function FunctionComp({ name }) {
   );
 }
 
-export default FunctionComp;
+export default memo(FunctionComp);
