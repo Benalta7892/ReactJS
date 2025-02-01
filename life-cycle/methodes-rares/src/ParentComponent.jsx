@@ -11,17 +11,17 @@ class ParentComponent extends Component {
     };
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("Je suis dans shouldComponentUpdate décide TRUE");
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("Je suis dans shouldComponentUpdate décide TRUE");
 
-    // console.log(this.state.name);
-    // console.log(nextState);
+  //   // console.log(this.state.name);
+  //   // console.log(nextState);
 
-    // if (this.state.name !== nextState.name) {
-    //   return true;
-    // }
-    return true;
-  }
+  //   // if (this.state.name !== nextState.name) {
+  //   //   return true;
+  //   // }
+  //   return true;
+  // }
 
   changeToBatMan = () => {
     this.setState({
