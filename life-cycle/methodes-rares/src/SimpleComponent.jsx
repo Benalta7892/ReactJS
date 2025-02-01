@@ -4,7 +4,13 @@ class SimpleComp extends Component {
   render() {
     console.log("%c render() du composant enfant simple", "color: yellow;");
 
-    return <div>SimpleComponent</div>;
+    return (
+      <div>
+        <p>
+          <span className="yellow">Simple Component :</span>
+        </p>
+      </div>
+    );
   }
 }
 
