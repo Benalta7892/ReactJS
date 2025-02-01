@@ -12,15 +12,15 @@ class ParentComponent extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("Je suis dans shouldComponentUpdate décide FALSE");
+    console.log("Je suis dans shouldComponentUpdate décide TRUE");
 
-    console.log(this.state.name);
-    console.log(nextState);
+    // console.log(this.state.name);
+    // console.log(nextState);
 
-    if (this.state.name !== nextState.name) {
-      return true;
-    }
-    return false;
+    // if (this.state.name !== nextState.name) {
+    //   return true;
+    // }
+    return true;
   }
 
   changeToBatMan = () => {
@@ -34,8 +34,8 @@ class ParentComponent extends Component {
 
     return (
       <div>
-        <SimpleComp />
-        <PureComp />
+        <SimpleComp name={this.state.name} />
+        <PureComp name={this.state.name} />
 
         <button onClick={this.changeToBatMan}>Changer en BatMan</button>
       </div>
