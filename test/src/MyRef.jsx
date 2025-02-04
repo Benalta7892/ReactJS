@@ -4,11 +4,6 @@ class MyRef extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      value: "",
-    };
-
-    this.myTitle = React.createRef();
     this.myInput = React.createRef();
   }
 
