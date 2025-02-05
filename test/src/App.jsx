@@ -1,25 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
-import MyRef from "./MyRef";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.refComp = React.createRef();
-  }
-
-  handleClick = () => {
-    this.refComp.current.focus();
-  };
-
   render() {
-    console.log(this.refComp);
-
     return (
-      <div className="App">
-        <MyRef name="Toto" ref={this.refComp} />
-        <button onClick={this.handleClick}>Valider</button>
+      <div className="container text-center">
+        <h1>Goku Vs Vegeta</h1>
+        <hr />
+
+        <div className="row"></div>
       </div>
     );
   }
