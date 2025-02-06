@@ -13,14 +13,14 @@ class App extends Component {
     };
   }
 
-  reduceLife = (param) => {
+  reduceLife = (param, param2) => {
     if (param === "Goku") {
       this.setState({
-        vegeta: this.state.vegeta - 10,
+        vegeta: this.state.vegeta - param2,
       });
     } else {
       this.setState({
-        goku: this.state.goku - 10,
+        goku: this.state.goku - param2,
       });
     }
   };
