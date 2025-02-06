@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import vegeta from "./vegeta.png";
+import goku from "./goku.png";
 
-class Vegeta extends Component {
+class Goku extends Component {
   state = {
     hits: 0,
   };
@@ -17,7 +17,7 @@ class Vegeta extends Component {
   render() {
     return (
       <div className="col">
-        <img src={vegeta} alt="vegeta" className="img-fluid h-50" />
+        <img src={goku} alt="goku" className="img-fluid	h-50 " />
         <br />
         <button onClick={this.addOne} className="btn btn-success m-3">
           Frapper
@@ -40,4 +40,4 @@ class Vegeta extends Component {
   }
 }
 
-export default Vegeta;
+export default Goku;

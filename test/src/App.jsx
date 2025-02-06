@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Vegeta from "./Vegeta";
+import Goku from "./Goku";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
 
         <div className="row">
           <Vegeta />
+          <Goku />
         </div>
       </div>
     );
