@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import goku from "./goku.png";
+import countHits from "./countHits";
 
 class Goku extends Component {
   state = {
@@ -15,12 +16,14 @@ class Goku extends Component {
   };
 
   render() {
+    const { name } = this.props;
+
     return (
       <div className="col">
         <img src={goku} alt="goku" className="img-fluid	h-50 " />
         <br />
         <button onClick={this.addOne} className="btn btn-success m-3">
-          Frapper
+          {name} Frappe
         </button>
 
         <table className="table table-striped">
@@ -40,4 +43,4 @@ class Goku extends Component {
   }
 }
 
-export default Goku;
+export default countHits(Goku);

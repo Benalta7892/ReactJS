@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import vegeta from "./vegeta.png";
+import countHits from "./countHits";
 
 class Vegeta extends Component {
   state = {
@@ -15,12 +16,14 @@ class Vegeta extends Component {
   };
 
   render() {
+    const { name } = this.props;
+
     return (
       <div className="col">
         <img src={vegeta} alt="vegeta" className="img-fluid h-50" />
         <br />
         <button onClick={this.addOne} className="btn btn-success m-3">
-          Frapper
+          {name} Frappe
         </button>
 
         <table className="table table-striped">
@@ -40,4 +43,4 @@ class Vegeta extends Component {
   }
 }
 
-export default Vegeta;
+export default countHits(Vegeta);
