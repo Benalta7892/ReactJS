@@ -14,6 +14,13 @@ const countHits = (WrappedComponent) => {
       });
     };
 
+    componentDidUpdate(prevProps, prevState) {
+      if (this.state !== prevState) {
+        const ComponentName = WrappedComponent.name;
+        this.props.reduceHandler(ComponentName);
+      }
+    }
+
     render() {
       return <WrappedComponent addOneHit={this.addOne} hocState={this.state} {...this.props} />;
     }

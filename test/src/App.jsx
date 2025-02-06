@@ -13,6 +13,18 @@ class App extends Component {
     };
   }
 
+  reduceLife = (param) => {
+    if (param === "Goku") {
+      this.setState({
+        vegeta: this.state.vegeta - 10,
+      });
+    } else {
+      this.setState({
+        goku: this.state.goku - 10,
+      });
+    }
+  };
+
   render() {
     return (
       <div className="container text-center">
@@ -20,8 +32,8 @@ class App extends Component {
         <hr />
 
         <div className="row">
-          <Vegeta name="Vegeta" life={this.state.vegeta} />
-          <Goku name="Goku" life={this.state.goku} />
+          <Vegeta name="Vegeta" life={this.state.vegeta} reduceHandler={this.reduceLife} />
+          <Goku name="Goku" life={this.state.goku} reduceHandler={this.reduceLife} />
         </div>
       </div>
     );
