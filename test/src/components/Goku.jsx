@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import goku from "./goku.png";
+import goku from "../goku.png";
 
 class Goku extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import frieza from "./frieza.png";
+import frieza from "../frieza.png";
 
 class Frieza extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import vegeta from "./vegeta.png";
+import vegeta from "../vegeta.png";
 
 class Vegeta extends Component {
   render() {

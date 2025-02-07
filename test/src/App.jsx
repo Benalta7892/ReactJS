@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import Vegeta from "./Vegeta";
-import Goku from "./Goku";
-import Frieza from "./Frieza";
+import Vegeta from "./components/Vegeta";
+import Goku from "./components/Goku";
+import Frieza from "./components/Frieza";
 
 class App extends Component {
   render() {
