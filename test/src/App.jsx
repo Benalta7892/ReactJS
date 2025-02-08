@@ -3,6 +3,7 @@ import "./App.css";
 import Vegeta from "./components/Vegeta";
 import Goku from "./components/Goku";
 import Frieza from "./components/Frieza";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 class App extends Component {
   render() {
@@ -12,9 +13,11 @@ class App extends Component {
         <hr />
 
         <div className="row">
-          <Vegeta />
-          <Goku />
-          <Frieza />
+          <ErrorBoundary name="Toto">
+            <Vegeta />
+            <Goku />
+            <Frieza />
+          </ErrorBoundary>
         </div>
       </div>
     );

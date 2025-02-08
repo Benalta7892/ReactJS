@@ -12,6 +12,10 @@ class Frieza extends Component {
     });
   };
   render() {
+    if (this.state.bg === "bg-danger") {
+      throw new Error("");
+    }
+
     return (
       <div className={`col ${this.state.bg}`}>
         <img onClick={this.handleClick} src={frieza} alt="frieza" className="img-fluid	h-50" />
