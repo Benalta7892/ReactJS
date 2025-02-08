@@ -19,7 +19,12 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // Vous pouvez afficher n'importe quelle UI de repli.
-      return <p>Oups, nous avons un problème !</p>;
+      return (
+        <div className="col bg-danger">
+          <p style={{ color: "white" }}>Oups, nous avons un problème !</p>
+          <br />
+        </div>
+      );
     }
 
     return this.props.children;
