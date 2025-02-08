@@ -13,9 +13,15 @@ class App extends Component {
         <hr />
 
         <div className="row">
-          <ErrorBoundary name="Toto">
+          <ErrorBoundary>
             <Vegeta />
+          </ErrorBoundary>
+
+          <ErrorBoundary>
             <Goku />
+          </ErrorBoundary>
+
+          <ErrorBoundary>
             <Frieza />
           </ErrorBoundary>
         </div>
