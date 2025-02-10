@@ -40,3 +40,12 @@
 .read-the-docs {
   color: #888;
 }
+
+h1 {
+  color: rgb(207, 208, 210);
+  margin-bottom: 0px;
+  margin-top: 40px;
+  font-size: 60px;
+  line-height: 65px;
+  font-weight: 700;
+}
