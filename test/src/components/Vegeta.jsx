@@ -22,7 +22,7 @@ class Vegeta extends Component {
         <br />
 
         <button onClick={this.addOne} className="btn btn-success m-3">
-          {this.props.name(this.state.saiyan)} Frappe
+          {this.props.render(this.state.saiyan)} Frappe
         </button>
 
         <table className="table table-striped">
