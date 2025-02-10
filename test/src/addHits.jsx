@@ -2,6 +2,10 @@ import { Component } from "react";
 
 class AddHits extends Component {
   state = {
+    fighters: {
+      vegeta: true,
+      goku: true,
+    },
     hits: 0,
   };
 
@@ -14,7 +18,7 @@ class AddHits extends Component {
   };
 
   render() {
-    return <>{this.props.render(this.state.hits, this.addOne)}</>;
+    return <>{this.props.render(this.state.hits, this.addOne, this.state.fighters)}</>;
   }
 }
 

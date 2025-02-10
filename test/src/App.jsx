@@ -12,8 +12,10 @@ class App extends Component {
         <hr />
 
         <div className="row">
-          <AddHits render={(hits, addOne, name) => <Vegeta hits={hits} addOne={addOne} name="Vegeta" />} />
-          <AddHits render={(hits, addOne, name) => <Goku hits={hits} addOne={addOne} name="Goku" />} />
+          <AddHits
+            render={(hits, addOne, saiyan) => saiyan.vegeta && <Vegeta hits={hits} addOne={addOne} name="Vegeta" />}
+          />
+          <AddHits render={(hits, addOne, saiyan) => saiyan.goku && <Goku hits={hits} addOne={addOne} name="Goku" />} />
         </div>
       </div>
     );
