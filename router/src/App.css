@@ -49,3 +49,11 @@ h1 {
   line-height: 65px;
   font-weight: 700;
 }
+
+.active {
+  border-bottom: 4px solid #61dafb;
+}
+
+.navbar {
+  padding-bottom: 0px !important;
+}

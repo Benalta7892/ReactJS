@@ -1,3 +1,5 @@
+import { Link, NavLink } from "react-router-dom";
+
 function Menu() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -16,20 +18,20 @@ function Menu() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
               Docs
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/tutorial">
+            <Link className="nav-link" to="/tutorial">
               Tutoriel
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/community">
+            <NavLink className="nav-link" to="/community">
               Communauté
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
