@@ -11,7 +11,7 @@ class App extends Component {
         <hr />
 
         <div className="row">
-          <Vegeta name="Vegeta" />
+          <Vegeta name={(saiyan) => saiyan && "Vegeta"} />
           <Goku name="Goku" />
         </div>
       </div>

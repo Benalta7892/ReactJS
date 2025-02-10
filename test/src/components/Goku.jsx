@@ -21,7 +21,7 @@ class Goku extends Component {
         <br />
 
         <button onClick={this.addOne} className="btn btn-success m-3">
-          {this.props.name}
+          {this.props.name} Frappe
         </button>
 
         <table className="table table-striped">
