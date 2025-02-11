@@ -41,10 +41,10 @@ function Count() {
 
       <div className="col-6">
         <p className="h1">{count.countTwo}</p>
-        <button className="btn btn-success m-3" onClick={() => dispatch({ type: "increment2", value: 1 })}>
+        <button className="btn btn-success m-3" onClick={() => dispatch({ type: "increment2", value: 10 })}>
           +
         </button>
-        <button className="btn btn-danger m-3" onClick={() => dispatch({ type: "decrement2", value: 1 })}>
+        <button className="btn btn-danger m-3" onClick={() => dispatch({ type: "decrement2", value: 10 })}>
           -
         </button>
       </div>
