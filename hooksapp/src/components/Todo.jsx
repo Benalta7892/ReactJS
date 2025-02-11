@@ -9,6 +9,8 @@ const Todo = () => {
     { id: 3, todo: "Acheter du fromage" },
   ]);
 
+  const [warning, setWarning] = useState(false);
+
   const myTodos = todos.map((todo) => {
     return (
       <li className="list-group-item" key={todo.id}>
@@ -18,17 +20,30 @@ const Todo = () => {
   });
 
   const addNewTodo = (newTodo) => {
-    setDotos([
-      ...todos,
-      {
-        id: uuidv4(),
-        todo: newTodo,
-      },
-    ]);
+    if (newTodo !== "") {
+      warning && setWarning(false);
+
+      setDotos([
+        ...todos,
+        {
+          id: uuidv4(),
+          todo: newTodo,
+        },
+      ]);
+    } else {
+      setWarning(true);
+    }
   };
+
+  const warningMsg = warning && (
+    <div className="alert alert-danger mt-4" role="alert">
+      Veuillez indiquer un Todo
+    </div>
+  );
 
   return (
     <div>
+      {warningMsg}
       <h1 className="text-center">{todos.length} To-do(s)</h1>
 
       <ul className="list-group">{myTodos}</ul>

@@ -6,6 +6,8 @@ const AddTodoForm = ({ addNewTodo }) => {
   const handleTodo = (e) => {
     e.preventDefault();
     addNewTodo(addTodo);
+
+    setAddTodo("");
   };
 
   return (
