@@ -3,6 +3,7 @@ import React, { Component } from "react";
 class ClassCount extends Component {
   state = {
     count: 0,
+    name: "",
   };
 
   componentDidMount() {
@@ -10,7 +11,10 @@ class ClassCount extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    document.title = `Vous avez cliqué ${this.state.count} fois`;
+    if (this.state.count !== prevState.count) {
+      console.log("Mise à jour du titre");
+      document.title = `Vous avez cliqué ${this.state.count} fois`;
+    }
   }
 
   render() {
@@ -19,6 +23,16 @@ class ClassCount extends Component {
         <h1>{this.state.count}</h1>
 
         <button onClick={() => this.setState({ count: this.state.count + 1 })}>Clique !</button>
+
+        <input
+          type="text"
+          value={this.state.name}
+          onChange={(e) => {
+            this.setState({
+              name: e.target.value,
+            });
+          }}
+        />
       </div>
     );
   }
