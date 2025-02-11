@@ -12,11 +12,7 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <MyContext.Provider value={this.state.user}>
-        <Profile info={this.state.user} />
-      </MyContext.Provider>
-    );
+    return <Profile info={this.state.user} />;
   }
 }
 
