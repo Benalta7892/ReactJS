@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddTodoForm from "./AddTodoForm";
+import { v4 as uuidv4 } from "uuid";
 
 const Todo = () => {
   const [todos, setDotos] = useState([
@@ -16,13 +17,23 @@ const Todo = () => {
     );
   });
 
+  const addNewTodo = (newTodo) => {
+    setDotos([
+      ...todos,
+      {
+        id: uuidv4(),
+        todo: newTodo,
+      },
+    ]);
+  };
+
   return (
     <div>
       <h1 className="text-center">{todos.length} To-do(s)</h1>
 
       <ul className="list-group">{myTodos}</ul>
 
-      <AddTodoForm />
+      <AddTodoForm addNewTodo={addNewTodo} />
     </div>
   );
 };
