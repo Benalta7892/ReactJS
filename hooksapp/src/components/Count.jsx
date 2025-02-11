@@ -9,10 +9,14 @@ const reducer = (state, action) => {
   console.log(action);
 
   switch (action.type) {
-    case "increment":
+    case "increment1":
       return { ...state, countOne: state.countOne + action.value };
-    case "decrement":
+    case "decrement1":
       return { ...state, countOne: state.countOne - action.value };
+    case "increment2":
+      return { ...state, countTwo: state.countTwo + action.value };
+    case "decrement2":
+      return { ...state, countTwo: state.countTwo - action.value };
     case "reinitialise":
       return initialState;
     default:
@@ -27,22 +31,22 @@ function Count() {
     <div className="row">
       <div className="col-6">
         <p className="h1">{count.countOne}</p>
-        <button className="btn btn-success m-3" onClick={() => dispatch({ type: "increment", value: 1 })}>
+        <button className="btn btn-success m-3" onClick={() => dispatch({ type: "increment1", value: 1 })}>
           +
         </button>
-        <button className="btn btn-danger m-3" onClick={() => dispatch({ type: "decrement", value: 1 })}>
+        <button className="btn btn-danger m-3" onClick={() => dispatch({ type: "decrement1", value: 1 })}>
           -
         </button>
       </div>
 
       <div className="col-6">
-        {/* <p className="h1">{count}</p>
-        <button className="btn btn-success m-3" onClick={() => dispatch("increment")}>
+        <p className="h1">{count.countTwo}</p>
+        <button className="btn btn-success m-3" onClick={() => dispatch({ type: "increment2", value: 1 })}>
           +
         </button>
-        <button className="btn btn-danger m-3" onClick={() => dispatch("decrement")}>
+        <button className="btn btn-danger m-3" onClick={() => dispatch({ type: "decrement2", value: 1 })}>
           -
-        </button> */}
+        </button>
       </div>
 
       <div className="col">
