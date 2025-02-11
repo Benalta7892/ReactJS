@@ -1,5 +1,5 @@
 import ContentData from "./ContentData";
-import { MyContext } from "./MyContext";
+import MyContext from "./MyContext";
 
 const ProfileData = () => {
   return (

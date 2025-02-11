@@ -1,4 +1,4 @@
-import { MyContext } from "./MyContext";
+import MyContext from "./MyContext";
 
 const ContentData = () => {
   return (
