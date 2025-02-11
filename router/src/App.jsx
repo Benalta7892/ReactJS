@@ -1,39 +1,21 @@
 import "./App.css";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import Docs from "./components/Docs";
-import Tutorials from "./components/Tutorials";
-import Community from "./components/Community";
-import Menu from "./components/Menu";
-import ErrorPage from "./components/ErrorPage";
 import { Component } from "react";
 import Profile from "./components/Profile";
+import { MyContext } from "./components/MyContext";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      underConst: {
-        Docs: false,
-        Tutorials: true,
-        Community: false,
-      },
-    };
-  }
+  state = {
+    user: {
+      name: "Lisa",
+      age: 28,
+    },
+  };
 
   render() {
     return (
-      <BrowserRouter>
-        <Menu />
-
-        <Switch>
-          <Route exact path="/" component={Docs} />
-          <Route path="/tutorial" component={Tutorials} />
-          <Route strict path="/community" component={Community} />
-          <Route path="/users/:profileId" component={Profile} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </BrowserRouter>
+      <MyContext.Provider value={this.state.user}>
+        <Profile info={this.state.user} />
+      </MyContext.Provider>
     );
   }
 }
