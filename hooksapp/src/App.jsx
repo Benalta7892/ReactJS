@@ -8,17 +8,19 @@ function App() {
   const [countTwo, setCountTwo] = useState({ value: 0, btnColor: "danger", increment: 20 });
 
   const incrementCountOne = (val) => {
+    console.log("Je suis dans incrementCountOne");
     countOne.value < 100 && setCountOne({ ...countOne, value: countOne.value + val });
   };
 
   const incrementCountTwo = (val) => {
+    console.log("Je suis dans incrementCountTwo");
     countTwo.value < 100 && setCountTwo({ ...countTwo, value: countTwo.value + val });
   };
 
   return (
     <div className="container">
-      <Count count={countOne.value} bgColor={countOne.btnColor} />
-      <Count count={countTwo.value} bgColor={countTwo.btnColor} />
+      <Count text="CountOne" count={countOne.value} bgColor={countOne.btnColor} />
+      <Count text="CountTwo" count={countTwo.value} bgColor={countTwo.btnColor} />
 
       <Button handleClick={incrementCountOne} btnColor={countOne.btnColor} increment={countOne.increment}>
         Count 1
