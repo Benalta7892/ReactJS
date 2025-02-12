@@ -1,12 +1,17 @@
 import { Component } from "react";
 import "./App.css";
-import Count from "./components/Count";
+import Button from "./components/Button";
+import Count from "./components/Count1";
 
 class App extends Component {
   render() {
     return (
-      <div className="text-center">
+      <div className="container">
         <Count />
+        <Count />
+
+        <Button>Count 1</Button>
+        <Button>Count 1</Button>
       </div>
     );
   }
