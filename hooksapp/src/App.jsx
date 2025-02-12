@@ -1,23 +1,11 @@
 import "./App.css";
-import FancyInput from "./components/FancyInput";
-import { useRef } from "react";
+import Box from "./components/Box";
 
 function App() {
-  const date = new Date();
-
-  const fancyInputRef = useRef();
-
-  const focusInput = (val) => {
-    fancyInputRef.current.focus(val);
-    fancyInputRef.current.countMax();
-
-    console.log(fancyInputRef.current);
-  };
-
   return (
     <div className="App">
-      <FancyInput name="Toto" ref={fancyInputRef} />
-      <button onClick={() => focusInput(date.getDay())}>Cliquer</button>
+      <h1>useLayoutEffect</h1>
+      <Box />
     </div>
   );
 }
