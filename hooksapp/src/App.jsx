@@ -1,39 +1,16 @@
-import { useState, useCallback } from "react";
 import "./App.css";
-import Button from "./components/Button";
-import Count from "./components/Count1";
+import Profile from "./components/Profile1";
 
 function App() {
-  const [countOne, setCountOne] = useState({ value: 0, btnColor: "success", increment: 25 });
-  const [countTwo, setCountTwo] = useState({ value: 0, btnColor: "danger", increment: 20 });
-
-  const incrementCountOne = useCallback(
-    (val) => {
-      console.log("Je suis dans incrementCountOne");
-      countOne.value < 100 && setCountOne({ ...countOne, value: countOne.value + val });
-    },
-    [countOne]
-  );
-
-  const incrementCountTwo = useCallback(
-    (val) => {
-      console.log("Je suis dans incrementCountTwo");
-      countTwo.value < 100 && setCountTwo({ ...countTwo, value: countTwo.value + val });
-    },
-    [countTwo]
-  );
-
   return (
     <div className="container">
-      <Count text="CountOne" count={countOne.value} bgColor={countOne.btnColor} />
-      <Count text="CountTwo" count={countTwo.value} bgColor={countTwo.btnColor} />
+      <h1 className="text-center">useMemo()</h1>
 
-      <Button handleClick={incrementCountOne} btnColor={countOne.btnColor} increment={countOne.increment}>
-        Count 1
-      </Button>
-      <Button handleClick={incrementCountTwo} btnColor={countTwo.btnColor} increment={countTwo.increment}>
-        Count 2
-      </Button>
+      <button className="btn btn-info mb-3">Increment</button>
+
+      <button className="btn btn-dark mb-3 float-right">Increment</button>
+
+      <Profile />
     </div>
   );
 }
