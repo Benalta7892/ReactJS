@@ -1,3 +1,5 @@
+import React from "react";
+
 function Profile({ count, profile }) {
   console.log("Je suis dans profile");
 
@@ -23,4 +25,4 @@ function Profile({ count, profile }) {
     </div>
   );
 }
-export default Profile;
+export default React.memo(Profile);
