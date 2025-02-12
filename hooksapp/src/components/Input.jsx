@@ -1,17 +1,20 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function Input() {
+  const [name, setName] = useState(null);
+
   const usernameRef = useRef(null);
   console.log(usernameRef);
 
   const handleSubmit = () => {
-    usernameRef.current.focus();
+    setName(usernameRef.current.value);
   };
 
   return (
     <div>
+      <p>{name}</p>
       <input ref={usernameRef} type="text" />
-      <button onClick={handleSubmit}>Focus</button>
+      <button onClick={handleSubmit}>Valider</button>
     </div>
   );
 }
