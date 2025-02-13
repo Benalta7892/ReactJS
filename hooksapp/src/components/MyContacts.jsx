@@ -1,6 +1,7 @@
 import Search from "./Search";
 import { useState, useEffect } from "react";
 import useUpdateDocTitle from "../hooks/useUpdateDocTitle";
+import TableUsers from "./TableUsers";
 
 const MyContacts = () => {
   const [search, setSearch] = useState("");
@@ -31,6 +32,8 @@ const MyContacts = () => {
       ) : (
         <Search searchStr={search} searchHandler={handleChange} />
       )}
+
+      {<TableUsers dataArray={users} />}
     </>
   );
 };
