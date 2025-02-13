@@ -5,8 +5,11 @@ const useFetch = (fetchUrl) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Array
-  useDebugValue(data, (val) => JSON.stringify(val));
-  // Si je suis en mode dev et que dev-tool est ouvert pour inspecter le custom hook
+  useDebugValue(data, (val) => {
+    alert("useDebugValue lancé");
+    return JSON.stringify(val);
+  });
+  // Se lance seulement Si je suis en mode dev et que dev-tool est ouvert pour inspecter le custom hook
 
   // Fetch
   useEffect(() => {
