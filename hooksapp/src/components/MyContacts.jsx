@@ -2,22 +2,17 @@ import Search from "./Search";
 import { useState, useEffect } from "react";
 import useUpdateDocTitle from "../hooks/useUpdateDocTitle";
 import TableUsers from "./TableUsers";
+import useFetch from "../hooks/useFetch";
 
 const MyContacts = () => {
   const [search, setSearch] = useState("");
-  const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [resultSearch, setResultSearch] = useState([]);
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => setUsers(json), setIsLoading(false))
-      .catch((err) => console.log(err.message));
-  }, []);
+  // Custom hook
+  const { data, isLoading } = useFetch("https://jsonplaceholder.typicode.com/users");
 
   const filterUsers = () => {
-    const findUsers = users.filter((user) => {
+    const findUsers = data.filter((user) => {
       return Object.values(user).join(" ").toLocaleLowerCase().includes(search.toLocaleLowerCase());
     });
 
