@@ -1,6 +1,10 @@
 import { useDeferredValue } from "react";
 
 const TableUsers = ({ dataArray }) => {
+  if (dataArray.length > 7) {
+    return new Error();
+  }
+
   const deferredValue = useDeferredValue(dataArray);
 
   return (

@@ -1,8 +1,13 @@
 import Search from "./Search";
-import { useState, useEffect } from "react";
-import useUpdateDocTitle from "../hooks/useUpdateDocTitle";
-import TableUsers from "./TableUsers";
+import { useState, useEffect, lazy, Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./ErrorFallback";
+
+// import useUpdateDocTitle from "../hooks/useUpdateDocTitle";
+// import TableUsers from "./TableUsers";
 import useFetch from "../hooks/useFetch";
+
+const TableUsers = lazy(() => import("./TableUsers")); // Import dynamique
 
 const MyContacts = () => {
   const [search, setSearch] = useState("");
@@ -50,7 +55,11 @@ const MyContacts = () => {
         msgDisplay("Pas de résultat !", "red")
       ) : // search === "" ? msgDisplay("Veuillez effectuer une recherche", "green")
       search === "" ? null : (
-        <TableUsers dataArray={resultSearch} />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Suspense fallback={<div>Chargement du tableau en cours...</div>}>
+            <TableUsers dataArray={resultSearch} />
+          </Suspense>
+        </ErrorBoundary>
       )}
     </>
   );
