@@ -2,7 +2,7 @@ import "./App.css";
 import Search from "./components/Search";
 import TableUsers from "./components/TableUsers";
 import { fakeUsersGenerator } from "./data/users";
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect } from "react";
 
 const users = fakeUsersGenerator();
 console.log(users);
@@ -10,7 +10,7 @@ console.log(users);
 const App = () => {
   const [search, setSearch] = useState("");
   const [resultSearch, setResultSearch] = useState([]);
-  const [isPending, startTransition] = useTransition();
+  // const [isPending, startTransition] = useTransition();
 
   // // Custom hook
   // const { data, isLoading } = useFetch("https://jsonplaceholder.typicode.com/users");
@@ -26,9 +26,10 @@ const App = () => {
   useEffect(() => {
     if (search !== "") {
       // Filter
-      startTransition(() => {
-        filterUsers();
-      });
+      // startTransition(() => {
+      //   filterUsers();
+      // });
+      filterUsers();
     } else {
       setResultSearch([]);
     }
@@ -48,7 +49,12 @@ const App = () => {
       <p>Total : {users.length} membres</p>
       <Search searchStr={search} searchHandler={handleChange} />
 
-      {search === "" ? null : <TableUsers dataArray={resultSearch} notification={isPending} />}
+      {search === "" ? null : (
+        <TableUsers
+          dataArray={resultSearch}
+          // notification={isPending}
+        />
+      )}
     </div>
   );
 };
