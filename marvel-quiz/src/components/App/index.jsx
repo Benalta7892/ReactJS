@@ -1,7 +1,16 @@
 import "../../App.css";
+import Header from "../Header";
+import Landing from "../Landing";
+import Footer from "../Footer";
 
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <div>
+      <Header />
+      <Landing />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
