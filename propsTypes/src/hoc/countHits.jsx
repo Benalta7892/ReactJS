@@ -1,35 +1,22 @@
-import { Component } from "react";
 import { PropTypes } from "prop-types";
+import { useState } from "react";
 
 const countHits = (WrappedComponent, power) => {
-  class CountHits extends Component {
-    static propTypes = {
-      reduceHandler: PropTypes.func.isRequired,
+  const CountHits = ({ reduceHandler, ...props }) => {
+    const [hits, setHits] = useState(0);
+
+    const addOne = () => {
+      setHits(hits + 1);
+      const compName = WrappedComponent.name;
+      reduceHandler(compName, power);
     };
 
-    state = {
-      hits: 0,
-    };
+    return <WrappedComponent addOneHit={addOne} hocState={{ hits }} {...props} />;
+  };
 
-    addOne = () => {
-      this.setState((prevState) => {
-        return {
-          hits: prevState.hits + 1,
-        };
-      });
-    };
-
-    componentDidUpdate(prevProps, prevState) {
-      if (this.state !== prevState) {
-        const compName = WrappedComponent.name;
-        this.props.reduceHandler(compName, power);
-      }
-    }
-
-    render() {
-      return <WrappedComponent addOneHit={this.addOne} hocState={this.state} {...this.props} />;
-    }
-  }
+  CountHits.propTypes = {
+    reduceHandler: PropTypes.func.isRequired,
+  };
 
   return CountHits;
 };
