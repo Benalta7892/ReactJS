@@ -1,11 +1,10 @@
 import "./App.css";
-import Box from "./components/Box";
+import ClickSayHello from "./components/ClickSayHello";
 
 function App() {
   return (
     <div className="App">
-      <h1>useLayoutEffect</h1>
-      <Box />
+      <ClickSayHello />
     </div>
   );
 }
