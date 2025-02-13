@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <h1>Mes contacts</h1>
       <MyContacts />
-      <ClickSayHello />
+      {/* <ClickSayHello /> */}
     </div>
   );
 }
