@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+
+.env
+>>>>>>> 84e0ab0 (Ajout de .env à .gitignore)
