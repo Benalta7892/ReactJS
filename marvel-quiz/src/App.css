@@ -127,11 +127,11 @@ main {
   background-image: url(images/xmen.png);
 }
 
-.leftImg {
+.left-img {
   background-image: url(images/wolverine.png), url(images/griffes-gauche.png);
 }
 
-.rightImg {
+.right-img {
   background-image: url(images/wolverine.png), url(images/griffes-droit.png);
 }
 
