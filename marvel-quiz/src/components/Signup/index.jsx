@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase/firebaseConfig";
 import { Link, useNavigate } from "react-router-dom";
 
-const Signup = (props) => {
+const Signup = () => {
   const data = {
     pseudo: "",
     email: "",
@@ -48,26 +48,26 @@ const Signup = (props) => {
   const errorMsg = error !== "" && <span>{error.message}</span>;
 
   return (
-    <div className="signUpLoginBox">
-      <div className="slContainer">
-        <div className="formBoxLeftSignup"></div>
-        <div className="formBoxRight">
-          <div className="formContent">
+    <div className="sign-up-login-box">
+      <div className="sl-container">
+        <div className="form-box-left-signup"></div>
+        <div className="form-box-right">
+          <div className="form-content">
             {errorMsg}
 
             <h2>Inscription</h2>
             <form onSubmit={handleSubmit}>
-              <div className="inputBox">
+              <div className="input-box">
                 <input onChange={handleChange} value={pseudo} type="text" id="pseudo" autoComplete="off" required />
                 <label htmlFor="pseudo">Pseudo</label>
               </div>
 
-              <div className="inputBox">
+              <div className="input-box">
                 <input onChange={handleChange} value={email} type="email" id="email" autoComplete="off" required />
                 <label htmlFor="email">Email</label>
               </div>
 
-              <div className="inputBox">
+              <div className="input-box">
                 <input
                   onChange={handleChange}
                   value={password}
@@ -79,7 +79,7 @@ const Signup = (props) => {
                 <label htmlFor="password">Mot de passe</label>
               </div>
 
-              <div className="inputBox">
+              <div className="input-box">
                 <input
                   onChange={handleChange}
                   value={confirmPassword}
@@ -93,8 +93,8 @@ const Signup = (props) => {
               {btn}
             </form>
 
-            <div className="linkContainer">
-              <Link to="/login" className="simpleLink">
+            <div className="link-container">
+              <Link to="/login" className="simple-link">
                 Déjà inscrit ? Connectez-vous.
               </Link>
             </div>

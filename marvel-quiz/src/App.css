@@ -123,7 +123,7 @@ main {
   height: 500px;
 }
 
-.startingImg {
+.starting-img {
   background-image: url(images/xmen.png);
 }
 
@@ -219,7 +219,7 @@ footer {
 /* END ERROR PAGE */
 
 /* SIGNUP - LOGIN - FORGETPASSWORD */
-.signUpLoginBox {
+.sign-up-login-box {
   background-image: url(images/bg-noise-texture.png);
   background-repeat: repeat;
   -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
@@ -229,12 +229,12 @@ footer {
   justify-content: center;
 }
 
-.slContainer {
+.sl-container {
   flex: 0 1 80%;
   display: flex;
 }
 
-.formBoxLeftSignup {
+.form-box-left-signup {
   min-height: 500px;
   background-image: url(images/ironman.png);
   background-repeat: no-repeat;
@@ -242,7 +242,7 @@ footer {
   flex: 0 1 50%;
 }
 
-.formBoxLeftLogin {
+.form-box-left-login {
   min-height: 500px;
   background-image: url(images/spiderman.png);
   background-repeat: no-repeat;
@@ -250,7 +250,7 @@ footer {
   flex: 0 1 50%;
 }
 
-.formBoxLeftForget {
+.form-box-left-forget {
   min-height: 500px;
   background-image: url(images/deadpool.png);
   background-repeat: no-repeat;
@@ -258,11 +258,11 @@ footer {
   flex: 0 1 50%;
 }
 
-.formBoxRight {
+.form-box-right {
   flex: 0 1 50%;
 }
 
-.formBoxRight span {
+.form-box-right span {
   display: block;
   color: var(--red-color);
   text-align: center;
@@ -271,25 +271,25 @@ footer {
   margin: 15px 0;
 }
 
-.formContent {
+.form-content {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.formContent h2 {
+.form-content h2 {
   margin: 0 0 40px 0;
   padding: 0;
   color: var(--white-color);
   text-transform: uppercase;
 }
 
-.formContent .inputBox {
+.form-content .input-box {
   position: relative;
   height: 80px;
 }
 
-.formContent .inputBox input {
+.form-content .input-box input {
   width: 100%;
   padding: 10px 0;
   font-size: 17px;
@@ -303,7 +303,7 @@ footer {
   outline: none;
 }
 
-.formContent .inputBox label {
+.form-content .input-box label {
   color: var(--white-color);
   position: absolute;
   top: 0;
@@ -317,8 +317,8 @@ footer {
   transition: 0.2s ease-in;
 }
 
-.formContent .inputBox input:focus ~ label,
-.formContent .inputBox input:valid ~ label {
+.form-content .input-box input:focus ~ label,
+.form-content .input-box input:valid ~ label {
   top: -30px;
   left: 0;
   color: var(--white-color);
@@ -327,7 +327,7 @@ footer {
 }
 
 /* Form buttons */
-.formContent button {
+.form-content button {
   margin-left: 0;
   display: block;
   margin: 0 auto 20px;
@@ -339,7 +339,7 @@ footer {
   border-radius: 5px;
 }
 
-.formContent button:hover {
+.form-content button:hover {
   background-color: var(--red-color);
   color: var(--white-color);
   cursor: pointer;
@@ -356,20 +356,20 @@ button[disabled]:hover {
   cursor: not-allowed;
 }
 
-.linkContainer {
+.link-container {
   height: 50px;
   margin-top: 35px;
   padding-top: 15px;
   border-top: 1px dashed var(--light-grey-color);
 }
 
-.simpleLink {
+.simple-link {
   color: var(--white-color);
   text-decoration: none;
   font-size: 12px;
 }
 
-.simpleLink:hover {
+.simple-link:hover {
   color: var(--red-color);
 }
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
@@ -386,7 +386,7 @@ button[disabled]:hover {
   margin: 40px auto 20px;
 }
 
-.loaderText {
+.loader-text {
   text-align: center;
   color: var(--white-color);
 }
@@ -413,7 +413,7 @@ button[disabled]:hover {
 /* END LOADER */
 
 /* LOGOUT SWITCH */
-.logoutContainer {
+.logout-container {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 30px;
@@ -476,14 +476,14 @@ input:checked + .slider:before {
 /* END LOGOUT SWITCH */
 
 /* LEVELS */
-.levelsContainer {
+.levels-container {
   display: flex;
   background-color: var(--light-grey-color);
   padding: 20px;
   margin-bottom: 40px;
 }
 
-.headingLevels {
+.heading-levels {
   margin: 0;
 }
 /* END LEVELS */
@@ -494,7 +494,7 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-.progressPercent {
+.progress-percent {
   text-align: center;
   background-color: var(--light-grey-color);
   color: var(--black-color);
@@ -503,7 +503,7 @@ input:checked + .slider:before {
   border-radius: 6px;
 }
 
-.progressBar {
+.progress-bar {
   border: 1px solid var(--light-grey-color);
   box-shadow: -1px 2px 8px 3px rgba(211, 209, 209, 0.3) inset;
   height: 30px;
@@ -515,7 +515,7 @@ input:checked + .slider:before {
   padding: 0 6px;
 }
 
-.progressBarChange {
+.progress-bar-change {
   height: 18px;
   text-align: center;
   border-radius: 5px;
@@ -524,7 +524,7 @@ input:checked + .slider:before {
 /* END PROGRESS BAR */
 
 /* ANSWER OPTIONS*/
-.answerOptions {
+.answer-options {
   padding: 10px;
   background-color: var(--light-grey-color);
   line-height: 20px;
@@ -537,7 +537,7 @@ input:checked + .slider:before {
   margin-top: 0;
 }
 
-.answerOptions:hover {
+.answer-options:hover {
   background-color: var(--red-color);
   -webkit-box-shadow: 0px 4px 16px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 4px 16px -5px rgba(0, 0, 0, 0.75);
@@ -548,7 +548,7 @@ input:checked + .slider:before {
 /* END ANSWER OPTIONS*/
 
 /* QUIZOVER */
-.stepsBtnContainer {
+.steps-btn-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -556,19 +556,19 @@ input:checked + .slider:before {
   flex-wrap: wrap;
 }
 
-.successMsg {
+.success-msg {
   color: var(--light-green-color);
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.failureMsg {
+.failure-msg {
   color: var(--red-color);
   font-weight: bold;
   text-transform: uppercase;
 }
 
-.btnResult {
+.btn-result {
   flex: 0 1 200px;
   font-size: 15px;
   text-transform: uppercase;
@@ -592,7 +592,7 @@ input:checked + .slider:before {
   flex: 0 1 250px;
 }
 
-.gameOver {
+.game-over {
   background-color: transparent;
   border: 2px solid var(--blue-color);
   color: var(--blue-color);
@@ -609,12 +609,12 @@ input:checked + .slider:before {
   color: var(--white-color);
 }
 
-.gameOver:hover {
+.game-over:hover {
   background-color: var(--blue-color);
   color: var(--white-color);
 }
 
-.answerContainer {
+.answer-container {
   overflow-x: "auto";
 }
 
@@ -638,7 +638,7 @@ input:checked + .slider:before {
   text-transform: uppercase;
 }
 
-.btnInfo {
+.btn-info {
   background-color: var(--dark-red-color);
   border: 2px solid var(--dark-red-color);
   color: var(--white-color);
@@ -651,7 +651,7 @@ input:checked + .slider:before {
   font-size: 15px;
 }
 
-.btnInfo:hover {
+.btn-info:hover {
   background-color: var(--red-color);
   border: 2px solid var(--red-color);
   color: var(--white-color);
@@ -659,7 +659,7 @@ input:checked + .slider:before {
 /* END QUIZOVER */
 
 /* SUBMIT BUTTON */
-.btnSubmit {
+.btn-submit {
   font-size: 16px;
   padding: 6px;
   background-color: var(--red-color);
@@ -680,7 +680,7 @@ input:checked + .slider:before {
 /* END SUBMIT BUTTON */
 
 /* MODAL */
-.modalBackground {
+.modal-background {
   position: fixed;
   z-index: 1;
   left: 0;

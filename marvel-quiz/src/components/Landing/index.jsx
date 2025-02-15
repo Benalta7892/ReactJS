@@ -7,9 +7,9 @@ const Landing = () => {
   const refWolverine = useRef(null);
 
   useEffect(() => {
-    refWolverine.current.classList.add("startingImg");
+    refWolverine.current.classList.add("starting-img");
     setTimeout(() => {
-      refWolverine.current.classList.remove("startingImg");
+      refWolverine.current.classList.remove("starting-img");
       setBtn(true);
     }, 1000);
   }, []);
