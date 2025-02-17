@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Logout from "../Logout";
 import Quiz from "../Quiz";
 
-const Welcome = (props) => {
+const Welcome = () => {
   const navigate = useNavigate();
 
   const [userSession, setUserSession] = useState(null);
@@ -15,8 +15,8 @@ const Welcome = (props) => {
       user ? setUserSession(user) : navigate("/");
     });
 
-    return listener();
-  }, []);
+    return listener;
+  }, [userSession, navigate]);
 
   return userSession === null ? (
     <>
