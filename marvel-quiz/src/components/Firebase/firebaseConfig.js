@@ -26,6 +26,9 @@ const config = {
 // // Deconnexion
 // signoutUser = () => this.auth.signOut();
 
+// Récupérer le mot de passe
+// passwordReset = (email) => this.auth.sendPasswordResetEmail(email);
+
 const app = initializeApp(config);
 export const auth = getAuth(app);
 
