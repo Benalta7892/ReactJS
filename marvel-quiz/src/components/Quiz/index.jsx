@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Levels from "../Levels";
 import ProgressBar from "../ProgressBar";
 import { QuizMarvel } from "../quizMarvel";
+import { ToastContainer, toast } from "react-toastify";
 
 class Quiz extends Component {
   state = {
@@ -15,6 +16,7 @@ class Quiz extends Component {
     btnDisabled: true,
     userAnswer: null,
     score: 0,
+    showWelcomeMsg: false,
   };
 
   storedDataRef = React.createRef();
@@ -38,6 +40,25 @@ class Quiz extends Component {
     this.loadQuestions(this.state.levelNames[this.state.quizLevel]);
   }
 
+  showWelcomeMsg = (pseudo) => {
+    if (!this.state.showWelcomeMsg) {
+      this.setState({
+        showWelcomeMsg: true,
+      });
+
+      toast.success(`🦄 Bienvenue ${pseudo} et bonne chance !`, {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        // progress: undefined,
+        theme: "colored",
+      });
+    }
+  };
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.storedQuestions !== prevState.storedQuestions) {
       this.setState({
@@ -53,6 +74,10 @@ class Quiz extends Component {
         userAnswer: null,
         btnDisabled: true,
       });
+    }
+
+    if (this.props.userData.pseudo) {
+      this.showWelcomeMsg(this.props.userData.pseudo);
     }
   }
 
@@ -70,6 +95,28 @@ class Quiz extends Component {
       this.setState((prevState) => ({
         score: prevState.score + 1,
       }));
+
+      toast.success("🦄 Bravo +1 !", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+        bodyClassName: "toastify-color",
+      });
+    } else {
+      toast.error("🦄 Raté 0 !", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+        bodyClassName: "toastify-color",
+      });
     }
   };
 
@@ -97,6 +144,7 @@ class Quiz extends Component {
     return (
       <div>
         {/* <h2>Pseudo : {pseudo}</h2> */}
+        <ToastContainer />
         <Levels />
         <ProgressBar />
         <h2>{this.state.question}</h2>
