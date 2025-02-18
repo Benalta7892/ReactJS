@@ -11,6 +11,7 @@ class Quiz extends Component {
     storedQuestions: [],
     question: null,
     options: [],
+    idQuestion: 0,
   };
 
   loadQuestions = (level) => {
@@ -33,8 +34,8 @@ class Quiz extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.storedQuestions !== prevState.storedQuestions) {
       this.setState({
-        question: null,
-        options: [],
+        question: this.state.storedQuestions[this.state.idQuestion].question,
+        options: this.state.storedQuestions[this.state.idQuestion].options,
       });
     }
   }
@@ -42,16 +43,21 @@ class Quiz extends Component {
   render() {
     // const { pseudo } = this.props.userData;
 
+    const displayOptions = this.state.options.map((option, index) => {
+      return (
+        <p key={index} className="answer-options">
+          {option}
+        </p>
+      );
+    });
+
     return (
       <div>
         {/* <h2>Pseudo : {pseudo}</h2> */}
         <Levels />
         <ProgressBar />
-        <h2>Notre question Quiz</h2>
-        <p className="answer-options">Question 1</p>
-        <p className="answer-options">Question 2</p>
-        <p className="answer-options">Question 3</p>
-        <p className="answer-options">Question 4</p>
+        <h2>{this.state.question}</h2>
+        {displayOptions}
         <button className="btn-submit">Suivant</button>
       </div>
     );
