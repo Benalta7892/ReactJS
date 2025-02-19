@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { forwardRef, useEffect, useState } from "react";
+import { GiTrophyCup } from "react-icons/gi";
 
 const QuizOver = forwardRef((props, ref) => {
   const { levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions } = props;
@@ -34,7 +35,9 @@ const QuizOver = forwardRef((props, ref) => {
             </>
           ) : (
             <>
-              <p className="success-msg">Bravo, vous êtes un expert !</p>
+              <p className="success-msg">
+                <GiTrophyCup size="50px" /> Bravo, vous êtes un expert !
+              </p>
               <button onClick={() => loadLevelQuestions(0)} className="btn-result game-over">
                 Accueil
               </button>
