@@ -190,7 +190,7 @@ class Quiz extends Component {
       <>
         {/* <h2>Pseudo : {pseudo}</h2> */}
         <ToastContainer />
-        <Levels />
+        <Levels levelNames={this.state.levelNames} quizLevel={this.state.quizLevel} />
         <ProgressBar idQuestion={this.state.idQuestion} maxQuestions={this.state.maxQuestions} />
         <h2>{this.state.question}</h2>
 
