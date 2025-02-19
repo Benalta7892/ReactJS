@@ -149,8 +149,8 @@ class Quiz extends Component {
       );
     });
 
-    return this.state.quizEnd ? (
-      <QuizOver />
+    return !this.state.quizEnd ? (
+      <QuizOver ref={this.storedDataRef} toto="Toto" />
     ) : (
       <>
         {/* <h2>Pseudo : {pseudo}</h2> */}
@@ -168,4 +168,4 @@ class Quiz extends Component {
     );
   }
 }
-export default Quiz;
+export default React.memo(Quiz);
