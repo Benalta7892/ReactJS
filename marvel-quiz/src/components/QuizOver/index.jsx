@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { forwardRef, useEffect, useState } from "react";
 
 const QuizOver = forwardRef((props, ref) => {
-  const { levelNames, score, maxQuestions, quizLevel, percent } = props;
+  const { levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions } = props;
 
   const [asked, setAsked] = useState([]);
 
@@ -11,6 +12,15 @@ const QuizOver = forwardRef((props, ref) => {
 
   const averageGrade = maxQuestions / 2;
 
+  if (score < averageGrade) {
+    // setTimeout(() => {
+    //   loadLevelQuestions(0);
+    // }, 3000);
+    setTimeout(() => {
+      loadLevelQuestions(quizLevel);
+    }, 3000);
+  }
+
   const decision =
     score >= averageGrade ? (
       <>
@@ -18,12 +28,16 @@ const QuizOver = forwardRef((props, ref) => {
           {quizLevel < levelNames.length ? (
             <>
               <p className="success-msg">Bravo, passez au niveau suivant !</p>
-              <button className="btn-result success">Niveau suivant</button>
+              <button onClick={() => loadLevelQuestions(quizLevel)} className="btn-result success">
+                Niveau suivant
+              </button>
             </>
           ) : (
             <>
               <p className="success-msg">Bravo, vous êtes un expert !</p>
-              <button className="btn-result game-over">Niveau suivant</button>
+              <button onClick={() => loadLevelQuestions(0)} className="btn-result game-over">
+                Accueil
+              </button>
             </>
           )}
         </div>
@@ -66,6 +80,7 @@ const QuizOver = forwardRef((props, ref) => {
     ) : (
       <tr>
         <td colSpan="3">
+          <div className="loader"></div>
           <p style={{ textAlign: "center", color: "red" }}>Pas de réponses !</p>
         </td>
       </tr>
