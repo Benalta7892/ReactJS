@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { forwardRef, useEffect, useState } from "react";
 import { GiTrophyCup } from "react-icons/gi";
+import Loader from "../Loader";
 
 const QuizOver = forwardRef((props, ref) => {
   const { levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions } = props;
@@ -14,9 +15,6 @@ const QuizOver = forwardRef((props, ref) => {
   const averageGrade = maxQuestions / 2;
 
   if (score < averageGrade) {
-    // setTimeout(() => {
-    //   loadLevelQuestions(0);
-    // }, 3000);
     setTimeout(() => {
       loadLevelQuestions(quizLevel);
     }, 3000);
@@ -83,8 +81,7 @@ const QuizOver = forwardRef((props, ref) => {
     ) : (
       <tr>
         <td colSpan="3">
-          <div className="loader"></div>
-          <p style={{ textAlign: "center", color: "red" }}>Pas de réponses !</p>
+          <Loader loadingMsg={"Pas de réponse !"} styling={{ textAlign: "center", color: "red" }} />
         </td>
       </tr>
     );
