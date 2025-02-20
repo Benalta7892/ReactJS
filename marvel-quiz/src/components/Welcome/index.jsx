@@ -18,7 +18,7 @@ const Welcome = () => {
       user ? setUserSession(user) : navigate("/");
     });
 
-    if (userSession) {
+    if (!!userSession) {
       const colRef = user(userSession.uid);
 
       getDoc(colRef)
