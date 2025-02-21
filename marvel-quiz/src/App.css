@@ -724,40 +724,40 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.comicImage {
+.comic-image {
   flex: 0 1 40%;
   align-self: stretch;
 }
 
-.comicDetails {
+.comic-details {
   flex: 0 1 50%;
   align-self: stretch;
 }
 
-.comicImage img {
+.comic-image img {
   width: 100%;
   height: auto;
 }
 
-.comicImage p {
+.comic-image p {
   font-size: 14px;
   font-style: italic;
   color: var(--dark-grey-color);
 }
 
-.comicDetails h3 {
+.comic-details h3 {
   padding-bottom: 10px;
   border-bottom: 1px solid var(--light-grey-color);
   text-transform: uppercase;
 }
 
-.comicDetails p {
+.comic-details p {
   font-style: italic;
   margin-bottom: 40px;
   color: var(--dark-grey-color);
 }
 
-.comicDetails a {
+.comic-details a {
   flex: 0 1 60%;
   display: inline-block;
   background-color: var(--dark-red-color);
@@ -769,7 +769,7 @@ input:checked + .slider:before {
   transform: skew(-15deg);
 }
 
-.comicDetails a:hover {
+.comic-details a:hover {
   background-color: var(--dark-grey-color);
 }
 
