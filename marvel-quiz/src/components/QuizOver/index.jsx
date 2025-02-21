@@ -7,6 +7,9 @@ import Modal from "../modal";
 const QuizOver = forwardRef((props, ref) => {
   const { levelNames, score, maxQuestions, quizLevel, percent, loadLevelQuestions } = props;
 
+  const VITE_MARVEL_API_KEY = import.meta.env.VITE_MARVEL_API_KEY;
+  const hash = import.meta.env.VITE_MARVEL_API_HASH;
+
   const [asked, setAsked] = useState([]);
   const [openModal, setOpenModal] = useState(false);
 
