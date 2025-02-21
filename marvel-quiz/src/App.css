@@ -693,14 +693,14 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.modalContainer {
+.modal-container {
   flex: 0 1 70%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   display: flex;
   flex-direction: column;
 }
 
-.modalHeader {
+.modal-header {
   background-color: var(--dark-red-color);
   padding: 15px;
   color: var(--white-color);
@@ -708,12 +708,12 @@ input:checked + .slider:before {
   border-top-right-radius: 5px;
 }
 
-.modalHeader h2 {
+.modal-header h2 {
   margin: 0;
   color: var(--white-color);
 }
 
-.modalBody {
+.modal-body {
   padding: 30px 10px;
   background: var(--white-color);
   height: 400px;
@@ -773,7 +773,7 @@ input:checked + .slider:before {
   background-color: var(--dark-grey-color);
 }
 
-.modalFooter {
+.modal-footer {
   background-color: var(--white-color);
   padding: 10px;
   color: var(--white-color);
@@ -785,7 +785,7 @@ input:checked + .slider:before {
   border-top: 1px solid var(--light-grey-color);
 }
 
-.modalBtn {
+.modal-btn {
   background: var(--light-grey-color);
   padding: 9px 5px;
   width: 90px;
@@ -798,7 +798,7 @@ input:checked + .slider:before {
   font-size: 15px;
 }
 
-.modalBtn:hover {
+.modal-btn:hover {
   background: var(--red-color);
   color: var(--white-color);
   border: 1px solid var(--light-grey-color);
@@ -856,7 +856,7 @@ input:checked + .slider:before {
 
 @media screen and (max-width: 980px) {
   /* Change Modal elements */
-  .modalBody {
+  .modal-body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 30px;
