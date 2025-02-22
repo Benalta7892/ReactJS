@@ -1,9 +1,9 @@
 // ACTION
-const BUT_PHONE = "BUY_PHONE";
+const BUY_PHONE = "BUY_PHONE";
 
 function buyPhone() {
   return {
-    type: BUT_PHONE,
+    type: BUY_PHONE,
   };
 }
 
@@ -25,3 +25,14 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+const store = Redux.createStore(reducer);
+const availablePhones = document.getElementById("count");
+availablePhones.innerHTML = store.getState().phones;
+document.getElementById("buy-phone").addEventListener("click", function () {
+  store.dispatch(buyPhone());
+});
+
+store.subscribe(() => {
+  availablePhones.innerHTML = store.getState().phones;
+});
