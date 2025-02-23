@@ -1,6 +1,7 @@
 // ACTION
 const BUY_PHONE = "BUY_PHONE";
 const BUY_TABLET = "BUY_TABLET";
+const BUY_TV = "BUY_TV";
 
 function buyPhone() {
   return {
@@ -14,14 +15,23 @@ function buyTablet() {
   };
 }
 
-// Reducer
+function buyTv() {
+  return {
+    type: BUY_TV,
+  };
+}
 
-const initialState = {
+// Reducer
+const initialStatePhones = {
   phones: 5,
   tablets: 10,
 };
 
-const reducer = (state = initialState, action) => {
+const initialStateTv = {
+  tv: 20,
+};
+
+const phonesReducer = (state = initialStatePhones, action) => {
   switch (action.type) {
     case BUY_PHONE:
       return {
@@ -38,14 +48,36 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+const tvReducer = (state = initialStateTv, action) => {
+  switch (action.type) {
+    case BUY_TV:
+      return {
+        ...state,
+        tv: state.tv - 1,
+      };
+    default:
+      return state;
+  }
+};
+
+// Combine Reducers
+const rootReducer = Redux.combineReducers({
+  phone: phonesReducer,
+  tv: tvReducer,
+});
+
 // Creer le store
-const store = Redux.createStore(reducer);
+const store = Redux.createStore(rootReducer);
 
 // Recuperer la data du Store
 const availablePhones = document.getElementById("count-phone");
 const availableTablets = document.getElementById("count-tab");
-availablePhones.innerHTML = store.getState().phones;
-availableTablets.innerHTML = store.getState().tablets;
+const availableTv = document.getElementById("count-tv");
+availablePhones.innerHTML = store.getState().phone.phones;
+availableTablets.innerHTML = store.getState().phone.tablets;
+availableTv.innerHTML = store.getState().tv.tv;
+
+console.log("initial State", store.getState());
 
 // Effectuer le Dispatch d'une action
 document.getElementById("buy-phone").addEventListener("click", function () {
@@ -54,9 +86,15 @@ document.getElementById("buy-phone").addEventListener("click", function () {
 document.getElementById("buy-tablet").addEventListener("click", function () {
   store.dispatch(buyTablet());
 });
+document.getElementById("buy-tv").addEventListener("click", function () {
+  store.dispatch(buyTv());
+});
 
 // Listerner
 store.subscribe(() => {
-  availablePhones.innerHTML = store.getState().phones;
-  availableTablets.innerHTML = store.getState().tablets;
+  availablePhones.innerHTML = store.getState().phone.phones;
+  availableTablets.innerHTML = store.getState().phone.tablets;
+  availableTv.innerHTML = store.getState().tv.tv;
+
+  console.log("Update State", store.getState());
 });
