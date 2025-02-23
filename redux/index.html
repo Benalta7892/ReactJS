@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Redux avec Vanilla JavaScript</title>
+  </head>
+  <body>
+    <h1>Notre application</h1>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.1/redux.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
-  <title>Redux</title>
-</head>
+    <div class="section-one">
+      <div class="container">
+        <img src="images/phone.png" alt="phones" />
+        <p>
+          Disponibilité:
+          <span id="count-phone"></span>
+        </p>
+        <button id="buy-phone">Acheter</button>
+      </div>
 
-<body>
-  <h1>Notre application</h1>
-  <div class="container">
-    <img src="images/phone.png" alt="phone">
-    <p>Disponibilité : <span id="count"></span></p>
-    <button id="buy-phone">Acheter</button>
-  </div>
-  <script src="./script.js" type="module"></script>
-</body>
+      <div class="container">
+        <img src="images/tablet.png" alt="tablettes" />
+        <p>
+          Disponibilité:
+          <span id="count-tab"></span>
+        </p>
+        <button id="buy-tablet">Acheter</button>
+      </div>
+    </div>
 
+    <script src="./script.js"></script>
+  </body>
 </html>
