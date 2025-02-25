@@ -1,11 +1,12 @@
 // /* eslint-disable react/prop-types */
 import phone from "../images/phone.png";
-import { useSelector } from "react-redux";
-// import store from "../redux/store";
+import { useSelector, useDispatch } from "react-redux";
 import { buyPhone } from "../redux/phone/actionPhone";
+// import store from "../redux/store";
 
 function PhoneComponent() {
   const phones = useSelector((state) => state.phones);
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -13,7 +14,7 @@ function PhoneComponent() {
       <p>
         Disponibilité : <span id="count-phone">{phones}</span>
       </p>
-      <button>Acheter</button>
+      <button onClick={() => dispatch(buyPhone())}>Acheter</button>
     </div>
   );
 }
