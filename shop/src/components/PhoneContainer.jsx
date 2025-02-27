@@ -3,7 +3,6 @@
 // import phone from "../images/phone.png";
 // import { useSelector, useDispatch } from "react-redux";
 // import { buyPhone } from "../redux/phone/actionPhone";
-// // import store from "../redux/store";
 
 // function PhoneContainer() {
 //   const phones = useSelector((state) => state.phones);
@@ -28,13 +27,15 @@
 
 // export default PhoneContainer;
 
+import { useState } from "react";
 import phone from "../images/phone.png";
 import { connect } from "react-redux";
-// import store from "../redux/store";
 import { buyPhone } from "../redux/phone/actionPhone";
 
 function PhoneComponent(props) {
-  // console.log(props);
+  console.log(props);
+
+  const [totalPhone, setTotalPhone] = useState(1);
 
   return (
     <div className="container">
@@ -42,7 +43,11 @@ function PhoneComponent(props) {
       <p>
         Disponibilité : <span id="count-phone">{props.phones}</span>
       </p>
-      <button onClick={() => props.buyPhone()}>Acheter</button>
+
+      <div className="btn-container">
+        <button onClick={() => props.buyPhone(totalPhone)}>Acheter</button>
+        <input type="number" value={totalPhone} onChange={(e) => setTotalPhone(e.target.value)} />
+      </div>
     </div>
   );
 }
@@ -55,7 +60,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buyPhone: () => dispatch(buyPhone()),
+    buyPhone: (totalPhone) => dispatch(buyPhone(totalPhone)),
   };
 };
 

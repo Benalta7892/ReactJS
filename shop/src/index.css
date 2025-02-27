@@ -8,7 +8,8 @@ body {
   justify-content: center;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -41,6 +42,12 @@ img {
   text-align: center;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
 button {
   border: 1px solid purple;
   background: purple;
@@ -49,9 +56,25 @@ button {
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 8px;
+  box-shadow: 10px 10px 15px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   border: 1px solid rgb(54, 4, 54);
   background: rgb(54, 4, 54);
+}
+
+input {
+  width: 60px;
+  text-align: center;
+  border: 2px solid purple;
+  border-radius: 8px;
+  box-shadow: 10px 10px 15px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comments {
+  width: 580px;
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 10px auto;
 }

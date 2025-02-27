@@ -5,8 +5,6 @@ import tv from "../images/tv.png";
 import { buyTv } from "../redux/tv/actionTv";
 
 function TvContainer(props) {
-  console.log(props);
-
   return (
     <div className="container">
       <img src={tv} alt="tv" />
