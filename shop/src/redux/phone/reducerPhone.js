@@ -15,4 +15,5 @@ const phoneReducer = (state = initialStatePhone, action) => {
       return state;
   }
 };
+
 export default phoneReducer;
