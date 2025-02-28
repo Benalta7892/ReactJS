@@ -1,4 +1,50 @@
-const CommentsContainer = () => {
-  return <div>CommentsContainer</div>;
+/* eslint-disable react/prop-types */
+
+import { connect } from "react-redux";
+import { apiCall } from "../redux/comments/actionComments";
+import { useEffect } from "react";
+
+const CommentsContainer = ({ apiData, apiComment }) => {
+  // console.log(apiData);
+
+  useEffect(() => {
+    apiComment();
+  }, [apiComment]);
+
+  const displayApiData = apiData.isLoading ? (
+    <p>Loading...</p>
+  ) : apiData.error ? (
+    <p>{apiData.error}</p>
+  ) : (
+    apiData.comments.map((comment) => {
+      return (
+        <div key={comment.id} className="comments">
+          <p>{comment.body}</p>
+        </div>
+      );
+    })
+  );
+
+  return (
+    <>
+      <hr />
+      <h2>Commentaires :</h2>
+      <hr />
+      {displayApiData}
+    </>
+  );
 };
-export default CommentsContainer;
+
+const mapStateToProps = (state) => {
+  return {
+    apiData: state.comments,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    apiComment: () => dispatch(apiCall()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CommentsContainer);
