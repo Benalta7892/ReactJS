@@ -1,5 +1,6 @@
 import PhoneContainer from "./components/PhoneContainer";
 import TvContainer from "./components/TvContainer";
+import CommentsContainer from "./components/CommentsContainer";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
@@ -10,6 +11,7 @@ function App() {
         <PhoneContainer />
         <TvContainer />
       </div>
+      <CommentsContainer />
     </Provider>
   );
 }
