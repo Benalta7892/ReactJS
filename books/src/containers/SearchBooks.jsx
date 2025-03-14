@@ -1,4 +1,13 @@
+import { useState } from "react";
+
 const SearchBooks = () => {
+  const [title, setTitle] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title);
+  };
+
   return (
     <main role="main">
       <div className="jumbotron jumbotron-fluid">
@@ -6,9 +15,16 @@ const SearchBooks = () => {
           <h1 className="display-4">BOOKS</h1>
           <p>Indiquez le sujet du livre à rechercher sur Google API</p>
 
-          <form className="form-inline justify-content-center">
+          <form className="form-inline justify-content-center" onSubmit={handleSubmit}>
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="Quoi rechercher ?" required />
+              <input
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                className="form-control"
+                placeholder="Quoi rechercher ?"
+                required
+              />
             </div>
 
             <div className="form-group">
