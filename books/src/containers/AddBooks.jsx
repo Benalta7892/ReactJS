@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { addBook } from "../redux/actions/actionAddBooks";
 
 const AddBooks = ({ libraryData, addBook }) => {
-  console.log(libraryData);
+  // console.log(libraryData);
 
   const initialState = {
     title: "",
@@ -20,6 +20,31 @@ const AddBooks = ({ libraryData, addBook }) => {
     // Vider le input
     setNewData(initialState);
   };
+
+  const displayData =
+    libraryData.length > 0 ? (
+      libraryData.map((data) => {
+        return (
+          <li key={data.id} className="list-group-item list-group-light d-flex justify-content-between">
+            <span>
+              <strong>Title</strong> : {data.title}{" "}
+            </span>
+            <span>
+              <strong>Auteur</strong> : {data.author}{" "}
+            </span>
+            <span className="btn btn-danger">X</span>
+          </li>
+        );
+      })
+    ) : (
+      <p className="text-center">Aucune data à afficher</p>
+    );
+
+  const deleteAllBooksBtn = libraryData.length > 0 && (
+    <div className="d-flex justify-content-center">
+      <button className="btn btn-danger mt-4 mb-4">Effacer tous les livres</button>
+    </div>
+  );
 
   return (
     <main role="main">
@@ -61,14 +86,8 @@ const AddBooks = ({ libraryData, addBook }) => {
       <div className="container" style={{ minHeight: "200px" }}>
         <div className="row">
           <div className="col-md-12">
-            <ul className="list-group">
-              <li className="list-group-item list-group-light d-flex justify-content-between">
-                Livres enregistrés ici
-              </li>
-            </ul>
-            <div className="d-flex justify-content-center">
-              <button className="btn btn-danger mt-4 mb-4">Effacer tous les livres</button>
-            </div>
+            <ul className="list-group">{displayData}</ul>
+            {deleteAllBooksBtn}
           </div>
         </div>
       </div>
