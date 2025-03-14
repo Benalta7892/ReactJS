@@ -19,7 +19,7 @@ const reducerFetchedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        fetchBooks: action.payload,
+        fetchedBooks: action.payload,
         error: "",
       };
 
@@ -27,7 +27,7 @@ const reducerFetchedBooks = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        fetchBooks: [],
+        fetchedBooks: [],
         error: action.payload,
       };
 
