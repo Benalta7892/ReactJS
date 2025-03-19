@@ -8,6 +8,9 @@ import ErrorPage from "./components/ErrorPage";
 import Installation from "./components/Installation";
 import Fondamentaux from "./components/Fondamentaux";
 import Hooks from "./components/Hooks";
+import Users from "./components/Users";
+import Profile from "./components/Profile";
+import NoteUsers from "./components/NoteUsers";
 
 function App() {
   return (
@@ -27,6 +30,11 @@ function App() {
         </Route>
         <Route path="/tutorial" element={<Tutorials />} />
         <Route path="/community" element={<Community />} />
+
+        <Route path="users" element={<Users />}>
+          <Route path=":id" element={<Profile />} />
+          <Route path="noteUsers" element={<NoteUsers />} />
+        </Route>
 
         {/* Page d'erreur */}
         <Route path="*" element={<ErrorPage />} />
