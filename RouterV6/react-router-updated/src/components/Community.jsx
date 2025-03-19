@@ -13,7 +13,7 @@ function Community() {
       </button>
 
       <button className="btn btn-danger" onClick={() => navigate(-2)}>
-        Retour vers Docs
+        -2
       </button>
     </div>
   );

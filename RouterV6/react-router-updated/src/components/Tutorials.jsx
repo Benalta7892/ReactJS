@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Tutorials() {
-  const [underConst, setUnderConst] = useState({
+  const [underConst] = useState({
     Docs: false,
     Tutorials: true,
     Community: false,
