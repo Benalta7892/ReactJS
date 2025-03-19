@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Docs from "./components/Docs";
 import Tutorials from "./components/Tutorials";
@@ -13,10 +13,10 @@ function App() {
 
       <Routes>
         {/* Redirection de "/" vers "/docs" */}
-        <Route path="/" element={<Navigate to="/docs" />} />
+        {/* <Route path="/" element={<Navigate to="/docs" />} /> */}
 
         {/* Les routes */}
-        <Route path="/docs" element={<Docs />} />
+        <Route path="/" element={<Docs />} />
         <Route path="/tutorial" element={<Tutorials />} />
         <Route path="/community" element={<Community />} />
 

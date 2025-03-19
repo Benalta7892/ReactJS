@@ -1,7 +1,13 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 function Menu() {
+  const navStyle = ({ isActive }) => {
+    return {
+      borderBottom: isActive && "4px solid #61dafb",
+    };
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="/">
@@ -14,20 +20,25 @@ function Menu() {
         data-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">Docs</Link>
+            <NavLink className="nav-link" to="/">
+              Docs
+            </NavLink>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/tutorial">Tutorial</Link>
+            <NavLink className="nav-link" style={navStyle} to="/tutorial">
+              Tutorial
+            </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/community">Community</NavLink>
+            <NavLink className={(navInfo) => (navInfo.isActive ? "nav-link active" : "nav-link")} to="/community">
+              Community
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -35,4 +46,4 @@ function Menu() {
   );
 }
 
-export default Menu
+export default Menu;
