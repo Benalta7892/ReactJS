@@ -26,7 +26,7 @@ function Menu() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/docs">
               Docs
             </NavLink>
           </li>

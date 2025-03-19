@@ -13,10 +13,10 @@ function App() {
 
       <Routes>
         {/* Redirection de "/" vers "/docs" */}
-        {/* <Route path="/" element={<Navigate to="/docs" />} /> */}
+        <Route path="/" element={<Navigate to="/docs" replace />} />
 
         {/* Les routes */}
-        <Route path="/" element={<Docs />} />
+        <Route path="/docs" element={<Docs />} />
         <Route path="/tutorial" element={<Tutorials />} />
         <Route path="/community" element={<Community />} />
 
