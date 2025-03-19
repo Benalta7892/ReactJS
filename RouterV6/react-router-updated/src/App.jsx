@@ -20,6 +20,7 @@ function App() {
 
         {/* Les routes */}
         <Route path="/docs" element={<Docs />}>
+          <Route index element={<Installation />} />
           <Route path="installation" element={<Installation />} />
           <Route path="fondamentaux" element={<Fondamentaux />} />
           <Route path="hooks" element={<Hooks />} />
