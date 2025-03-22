@@ -11,6 +11,9 @@ import Hooks from "./components/Hooks";
 import Users from "./components/Users";
 import Profile from "./components/Profile";
 import NoteUsers from "./components/NoteUsers";
+import { lazy, Suspense } from "react";
+// import Blog from "./components/Blog";
+const LazyBlog = lazy(() => import("./components/Blog"));
 
 function App() {
   return (
@@ -35,6 +38,16 @@ function App() {
           <Route path=":id" element={<Profile />} />
           <Route path="noteUsers" element={<NoteUsers />} />
         </Route>
+
+        {/* <Route path="/blog" element={<Blog />} /> */}
+        <Route
+          path="/blog"
+          element={
+            <Suspense fallback={<div>Chargement des articles...</div>}>
+              <LazyBlog />
+            </Suspense>
+          }
+        />
 
         {/* Page d'erreur */}
         <Route path="*" element={<ErrorPage />} />
