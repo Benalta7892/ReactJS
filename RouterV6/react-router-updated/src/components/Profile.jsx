@@ -5,6 +5,7 @@ import axios from "axios";
 const Profile = () => {
   const [data, setData] = useState({});
   const params = useParams();
+  console.log(data);
 
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/users/${params.id}`).then((resp) => {
